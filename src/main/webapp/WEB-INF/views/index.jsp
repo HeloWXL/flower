@@ -8,8 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="meta description">
-    <link rel="shortcut icon" href="${ctx}/res/img/favicon.ico" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,900%7CYesteryear" rel="stylesheet">
+    <link rel="shortcut icon" href="${ctx}/res/img/favicon.ico" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,900%7CYesteryear"
+          rel="stylesheet">
     <link href="${ctx}/res/css/index/vendor.css" rel="stylesheet">
     <link href="${ctx}/res/css/index/style.css" rel="stylesheet">
     <script>
@@ -43,7 +44,7 @@
                     <!-- start logo area -->
                     <div class="col-lg-3">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="${ctx}/index">
                                 <img src="${ctx}/res/img/logo/logo.png" alt="">
                             </a>
                         </div>
@@ -57,8 +58,8 @@
                                 <!-- main menu navbar start -->
                                 <nav class="desktop-menu">
                                     <ul>
-                                        <li><a href="index.html">首页</a></li>
-                                        <li><a href="shop.html">商铺</a></li>
+                                        <li><a href="${ctx}/index">首页</a></li>
+                                        <li><a href="${ctx}/shop">商铺</a></li>
                                     </ul>
                                 </nav>
                                 <!-- main menu navbar end -->
@@ -120,7 +121,7 @@
                 <div class="col-12">
                     <div class="mobile-main-header">
                         <div class="mobile-logo">
-                            <a href="index.html">
+                            <a href="${ctx}/index">
                                 <img src="${ctx}/res/img/logo/logo.png" alt="Brand Logo">
                             </a>
                         </div>
@@ -170,8 +171,8 @@
                 <!-- mobile menu navigation start -->
                 <nav>
                     <ul class="mobile-menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="${ctx}/index">Home</a></li>
+                        <li><a href="${ctx}/shop">Shop</a></li>
                         <li><a href="product-details.html">Product Details</a></li>
                     </ul>
                 </nav>
@@ -183,7 +184,8 @@
                 <ul class="nav">
                     <li>
                         <div class="dropdown mobile-top-dropdown">
-                            <a href="#" class="dropdown-toggle" id="currency" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a href="#" class="dropdown-toggle" id="currency" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
                                 Currency
                                 <i class="fa fa-angle-down"></i>
                             </a>
@@ -195,7 +197,8 @@
                     </li>
                     <li>
                         <div class="dropdown mobile-top-dropdown">
-                            <a href="#" class="dropdown-toggle" id="myaccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a href="#" class="dropdown-toggle" id="myaccount" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
                                 My Account
                                 <i class="fa fa-angle-down"></i>
                             </a>
@@ -236,7 +239,6 @@
 <!-- off-canvas menu end -->
 
 
-
 <!-- main wrapper start -->
 <main>
     <!-- slider area start -->
@@ -252,7 +254,7 @@
                                     <span>valentine gift</span>
                                     <h1>Fresh Your Mind</h1>
                                     <h2>& Feeling love</h2>
-                                    <a href="shop.html" class="btn-hero">shop now</a>
+                                    <a href="${ctx}/shop" class="btn-hero">shop now</a>
                                 </div>
                             </div>
                         </div>
@@ -271,7 +273,7 @@
                                     <span>valentine gift</span>
                                     <h1>Fresh Your Mind</h1>
                                     <h2>& Feeling love</h2>
-                                    <a href="shop.html" class="btn-hero">shop now</a>
+                                    <a href="${ctx}/shop" class="btn-hero">shop now</a>
                                 </div>
                             </div>
                         </div>
@@ -432,9 +434,14 @@
                                 </div>
                             </div>
                             <div class="button-group">
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i
+                                        class="lnr lnr-heart"></i></a>
+                                <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip"
+                                                                                                data-placement="left"
+                                                                                                title="Quick View"><i
+                                        class="lnr lnr-magnifier"></i></span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i
+                                        class="lnr lnr-cart"></i></a>
                             </div>
                         </figure>
                         <div class="product-caption">
@@ -464,9 +471,14 @@
                                 </div>
                             </div>
                             <div class="button-group">
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i
+                                        class="lnr lnr-heart"></i></a>
+                                <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip"
+                                                                                                data-placement="left"
+                                                                                                title="Quick View"><i
+                                        class="lnr lnr-magnifier"></i></span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i
+                                        class="lnr lnr-cart"></i></a>
                             </div>
                         </figure>
                         <div class="product-caption">
@@ -496,9 +508,14 @@
                                 </div>
                             </div>
                             <div class="button-group">
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i
+                                        class="lnr lnr-heart"></i></a>
+                                <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip"
+                                                                                                data-placement="left"
+                                                                                                title="Quick View"><i
+                                        class="lnr lnr-magnifier"></i></span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i
+                                        class="lnr lnr-cart"></i></a>
                             </div>
                         </figure>
                         <div class="product-caption">
@@ -531,9 +548,14 @@
                                 </div>
                             </div>
                             <div class="button-group">
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i
+                                        class="lnr lnr-heart"></i></a>
+                                <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip"
+                                                                                                data-placement="left"
+                                                                                                title="Quick View"><i
+                                        class="lnr lnr-magnifier"></i></span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i
+                                        class="lnr lnr-cart"></i></a>
                             </div>
                         </figure>
                         <div class="product-caption">
@@ -566,9 +588,14 @@
                                 </div>
                             </div>
                             <div class="button-group">
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i
+                                        class="lnr lnr-heart"></i></a>
+                                <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip"
+                                                                                                data-placement="left"
+                                                                                                title="Quick View"><i
+                                        class="lnr lnr-magnifier"></i></span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i
+                                        class="lnr lnr-cart"></i></a>
                             </div>
                         </figure>
                         <div class="product-caption">
@@ -601,9 +628,14 @@
                                 </div>
                             </div>
                             <div class="button-group">
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i
+                                        class="lnr lnr-heart"></i></a>
+                                <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip"
+                                                                                                data-placement="left"
+                                                                                                title="Quick View"><i
+                                        class="lnr lnr-magnifier"></i></span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i
+                                        class="lnr lnr-cart"></i></a>
                             </div>
                         </figure>
                         <div class="product-caption">
@@ -636,9 +668,14 @@
                                 </div>
                             </div>
                             <div class="button-group">
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i
+                                        class="lnr lnr-heart"></i></a>
+                                <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip"
+                                                                                                data-placement="left"
+                                                                                                title="Quick View"><i
+                                        class="lnr lnr-magnifier"></i></span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i
+                                        class="lnr lnr-cart"></i></a>
                             </div>
                         </figure>
                         <div class="product-caption">
@@ -668,9 +705,14 @@
                                 </div>
                             </div>
                             <div class="button-group">
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i
+                                        class="lnr lnr-heart"></i></a>
+                                <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip"
+                                                                                                data-placement="left"
+                                                                                                title="Quick View"><i
+                                        class="lnr lnr-magnifier"></i></span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i
+                                        class="lnr lnr-cart"></i></a>
                             </div>
                         </figure>
                         <div class="product-caption">
@@ -688,7 +730,7 @@
 
                 <div class="col-12">
                     <div class="view-more-btn">
-                        <a class="btn-hero btn-load-more" href="shop.html">view more products</a>
+                        <a class="btn-hero btn-load-more" href="${ctx}/shop">view more products</a>
                     </div>
                 </div>
             </div>
@@ -765,9 +807,13 @@
                                     </div>
                                 </div>
                                 <div class="button-group">
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i
+                                            class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span
+                                            data-toggle="tooltip" data-placement="left" title="Quick View"><i
+                                            class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i
+                                            class="lnr lnr-cart"></i></a>
                                 </div>
                             </figure>
                             <div class="product-caption">
@@ -798,9 +844,13 @@
                                     </div>
                                 </div>
                                 <div class="button-group">
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i
+                                            class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span
+                                            data-toggle="tooltip" data-placement="left" title="Quick View"><i
+                                            class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i
+                                            class="lnr lnr-cart"></i></a>
                                 </div>
                             </figure>
                             <div class="product-caption">
@@ -831,9 +881,13 @@
                                     </div>
                                 </div>
                                 <div class="button-group">
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i
+                                            class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span
+                                            data-toggle="tooltip" data-placement="left" title="Quick View"><i
+                                            class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i
+                                            class="lnr lnr-cart"></i></a>
                                 </div>
                             </figure>
                             <div class="product-caption">
@@ -864,9 +918,13 @@
                                     </div>
                                 </div>
                                 <div class="button-group">
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i
+                                            class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span
+                                            data-toggle="tooltip" data-placement="left" title="Quick View"><i
+                                            class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i
+                                            class="lnr lnr-cart"></i></a>
                                 </div>
                             </figure>
                             <div class="product-caption">
@@ -894,9 +952,13 @@
                                     </div>
                                 </div>
                                 <div class="button-group">
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i
+                                            class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span
+                                            data-toggle="tooltip" data-placement="left" title="Quick View"><i
+                                            class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i
+                                            class="lnr lnr-cart"></i></a>
                                 </div>
                             </figure>
                             <div class="product-caption">
@@ -927,9 +989,13 @@
                                     </div>
                                 </div>
                                 <div class="button-group">
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i
+                                            class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span
+                                            data-toggle="tooltip" data-placement="left" title="Quick View"><i
+                                            class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i
+                                            class="lnr lnr-cart"></i></a>
                                 </div>
                             </figure>
                             <div class="product-caption">
@@ -953,7 +1019,8 @@
     <!-- Instagram Feed Area Start -->
     <div class="instagram-feed-area">
         <div class="instagram-feed-thumb">
-            <div id="instafeed" class="instagram-carousel" data-userid="6666969077" data-accesstoken="6666969077.1677ed0.d325f406d94c4dfab939137c5c2cc6c2">
+            <div id="instafeed" class="instagram-carousel" data-userid="6666969077"
+                 data-accesstoken="6666969077.1677ed0.d325f406d94c4dfab939137c5c2cc6c2">
             </div>
         </div>
     </div>
@@ -976,30 +1043,30 @@
                         <div class="col-lg-5 col-md-5">
                             <div class="product-large-slider">
                                 <div class="pro-large-img">
-                                    <img src="${ctx}/res/img/product/product-details-img1.jpg" alt="product-details" />
+                                    <img src="${ctx}/res/img/product/product-details-img1.jpg" alt="product-details"/>
                                 </div>
                                 <div class="pro-large-img">
-                                    <img src="${ctx}/res/img/product/product-details-img2.jpg" alt="product-details" />
+                                    <img src="${ctx}/res/img/product/product-details-img2.jpg" alt="product-details"/>
                                 </div>
                                 <div class="pro-large-img">
-                                    <img src="${ctx}/res/img/product/product-details-img3.jpg" alt="product-details" />
+                                    <img src="${ctx}/res/img/product/product-details-img3.jpg" alt="product-details"/>
                                 </div>
                                 <div class="pro-large-img">
-                                    <img src="${ctx}/res/img/product/product-details-img4.jpg" alt="product-details" />
+                                    <img src="${ctx}/res/img/product/product-details-img4.jpg" alt="product-details"/>
                                 </div>
                             </div>
                             <div class="pro-nav slick-row-10 slick-arrow-style">
                                 <div class="pro-nav-thumb">
-                                    <img src="${ctx}/res/img/product/product-details-img1.jpg" alt="product-details" />
+                                    <img src="${ctx}/res/img/product/product-details-img1.jpg" alt="product-details"/>
                                 </div>
                                 <div class="pro-nav-thumb">
-                                    <img src="${ctx}/res/img/product/product-details-img2.jpg" alt="product-details" />
+                                    <img src="${ctx}/res/img/product/product-details-img2.jpg" alt="product-details"/>
                                 </div>
                                 <div class="pro-nav-thumb">
-                                    <img src="${ctx}/res/img/product/product-details-img3.jpg" alt="product-details" />
+                                    <img src="${ctx}/res/img/product/product-details-img3.jpg" alt="product-details"/>
                                 </div>
                                 <div class="pro-nav-thumb">
-                                    <img src="${ctx}/res/img/product/product-details-img4.jpg" alt="product-details" />
+                                    <img src="${ctx}/res/img/product/product-details-img4.jpg" alt="product-details"/>
                                 </div>
                             </div>
                         </div>
@@ -1026,7 +1093,8 @@
                                     <i class="fa fa-check-circle"></i>
                                     <span>200 in stock</span>
                                 </div>
-                                <p class="pro-desc">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                                <p class="pro-desc">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                    nonumy
                                     eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
                                 <div class="quantity-cart-box d-flex align-items-center">
                                     <h5>qty:</h5>
