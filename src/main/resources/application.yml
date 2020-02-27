@@ -15,7 +15,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
 
 mybatis-plus:
-  mapper-locations: classpath:/mapping/*Dao.xml
+  mapper-locations: classpath:/mapper/*Dao.xml
   typeAliasesPackage: com.bs.flower.entity
   configuration:
     map-underscore-to-camel-case: true
