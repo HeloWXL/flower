@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bs.flower.dao.AdminDao">
+
+    <resultMap type="com.bs.flower.entity.Admin" id="AdminMap">
+        <result property="adminId" column="admin_id" jdbcType="INTEGER"/>
+        <result property="adminName" column="admin_name" jdbcType="VARCHAR"/>
+        <result property="adminNick" column="admin_nick" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="phone" column="phone" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="AdminMap">
+        select
+          admin_id, admin_name, admin_nick, password, phone, create_time, update_time
+        from flower.admin
+        where admin_id = #{adminId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="AdminMap">
+        select
+          admin_id, admin_name, admin_nick, password, phone, create_time, update_time
+        from flower.admin
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="AdminMap">
+        select
+          admin_id, admin_name, admin_nick, password, phone, create_time, update_time
+        from flower.admin
+        <where>
+            <if test="adminId != null">
+                and admin_id = #{adminId}
+            </if>
+            <if test="adminName != null and adminName != ''">
+                and admin_name = #{adminName}
+            </if>
+            <if test="adminNick != null and adminNick != ''">
+                and admin_nick = #{adminNick}
+            </if>
+            <if test="password != null and password != ''">
+                and password = #{password}
+            </if>
+            <if test="phone != null and phone != ''">
+                and phone = #{phone}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="adminId" useGeneratedKeys="true">
+        insert into flower.admin(admin_name, admin_nick, password, phone, create_time, update_time)
+        values (#{adminName}, #{adminNick}, #{password}, #{phone}, #{createTime}, #{updateTime})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update flower.admin
+        <set>
+            <if test="adminName != null and adminName != ''">
+                admin_name = #{adminName},
+            </if>
+            <if test="adminNick != null and adminNick != ''">
+                admin_nick = #{adminNick},
+            </if>
+            <if test="password != null and password != ''">
+                password = #{password},
+            </if>
+            <if test="phone != null and phone != ''">
+                phone = #{phone},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+        </set>
+        where admin_id = #{adminId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from flower.admin where admin_id = #{adminId}
+    </delete>
+
+</mapper>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bs.flower.dao.OrderDao">
+
+    <resultMap type="com.bs.flower.entity.Order" id="OrderMap">
+        <result property="orderId" column="order_id" jdbcType="INTEGER"/>
+        <result property="orderNo" column="order_no" jdbcType="VARCHAR"/>
+        <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="productId" column="product_id" jdbcType="INTEGER"/>
+        <result property="price" column="price" jdbcType="OTHER"/>
+        <result property="amout" column="amout" jdbcType="INTEGER"/>
+        <result property="receiverName" column="receiver_name" jdbcType="VARCHAR"/>
+        <result property="receiverPhone" column="receiver_phone" jdbcType="VARCHAR"/>
+        <result property="receiverAddress" column="receiver_address" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="sendTime" column="send_time" jdbcType="TIMESTAMP"/>
+        <result property="receiveTime" column="receive_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="OrderMap">
+        select
+          order_id, order_no, user_id, product_id, price, amout, receiver_name, receiver_phone, receiver_address, create_time, send_time, receive_time
+        from flower.order
+        where order_id = #{orderId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="OrderMap">
+        select
+          order_id, order_no, user_id, product_id, price, amout, receiver_name, receiver_phone, receiver_address, create_time, send_time, receive_time
+        from flower.order
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="OrderMap">
+        select
+          order_id, order_no, user_id, product_id, price, amout, receiver_name, receiver_phone, receiver_address, create_time, send_time, receive_time
+        from flower.order
+        <where>
+            <if test="orderId != null">
+                and order_id = #{orderId}
+            </if>
+            <if test="orderNo != null and orderNo != ''">
+                and order_no = #{orderNo}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="productId != null">
+                and product_id = #{productId}
+            </if>
+            <if test="price != null">
+                and price = #{price}
+            </if>
+            <if test="amout != null">
+                and amout = #{amout}
+            </if>
+            <if test="receiverName != null and receiverName != ''">
+                and receiver_name = #{receiverName}
+            </if>
+            <if test="receiverPhone != null and receiverPhone != ''">
+                and receiver_phone = #{receiverPhone}
+            </if>
+            <if test="receiverAddress != null and receiverAddress != ''">
+                and receiver_address = #{receiverAddress}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="sendTime != null">
+                and send_time = #{sendTime}
+            </if>
+            <if test="receiveTime != null">
+                and receive_time = #{receiveTime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="orderId" useGeneratedKeys="true">
+        insert into flower.order(order_no, user_id, product_id, price, amout, receiver_name, receiver_phone, receiver_address, create_time, send_time, receive_time)
+        values (#{orderNo}, #{userId}, #{productId}, #{price}, #{amout}, #{receiverName}, #{receiverPhone}, #{receiverAddress}, #{createTime}, #{sendTime}, #{receiveTime})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update flower.order
+        <set>
+            <if test="orderNo != null and orderNo != ''">
+                order_no = #{orderNo},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId},
+            </if>
+            <if test="productId != null">
+                product_id = #{productId},
+            </if>
+            <if test="price != null">
+                price = #{price},
+            </if>
+            <if test="amout != null">
+                amout = #{amout},
+            </if>
+            <if test="receiverName != null and receiverName != ''">
+                receiver_name = #{receiverName},
+            </if>
+            <if test="receiverPhone != null and receiverPhone != ''">
+                receiver_phone = #{receiverPhone},
+            </if>
+            <if test="receiverAddress != null and receiverAddress != ''">
+                receiver_address = #{receiverAddress},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="sendTime != null">
+                send_time = #{sendTime},
+            </if>
+            <if test="receiveTime != null">
+                receive_time = #{receiveTime},
+            </if>
+        </set>
+        where order_id = #{orderId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from flower.order where order_id = #{orderId}
+    </delete>
+
+</mapper>
