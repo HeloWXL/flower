@@ -4,7 +4,7 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
-    <title>我的店铺</title>
+    <title>店铺</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -84,9 +84,9 @@
                                             <i class="lnr lnr-user"></i>
                                         </a>
                                         <ul class="dropdown-list">
-                                            <li><a href="#">login</a></li>
-                                            <li><a href="#">register</a></li>
-                                            <li><a href="#">my account</a></li>
+                                            <li><a href="#">登录</a></li>
+                                            <li><a href="#">注册</a></li>
+                                            <li><a href="#">我的账户</a></li>
                                         </ul>
                                     </li>
                                     <li>
@@ -235,8 +235,6 @@
     </div>
 </aside>
 <!-- off-canvas menu end -->
-
-
 
 <!-- main wrapper start -->
 <main>
