@@ -52,4 +52,16 @@ public interface UserService {
      */
     boolean deleteById(Integer userId);
 
+    /**
+    * @Description: 用户登录
+    * @Date: 2020/2/28 4:54 PM
+    */ 
+    User checkLogin(String userName,String password);
+
+    /**
+    * @Description: 用户注册
+    * @Date: 2020/2/28 5:32 PM
+    */ 
+    int register(User user);
+
 }

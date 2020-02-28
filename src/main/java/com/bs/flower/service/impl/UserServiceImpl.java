@@ -1,11 +1,13 @@
 package com.bs.flower.service.impl;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.bs.flower.entity.User;
 import com.bs.flower.dao.UserDao;
 import com.bs.flower.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -75,5 +77,22 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean deleteById(Integer userId) {
         return this.userDao.deleteById(userId) > 0;
+    }
+
+    @Override
+    public User checkLogin(String userName,String password) {
+        User user = new User();
+        user.setPassword(password);
+        user.setUserName(userName);
+        return  userDao.selectOne(user);
+
+    }
+
+    @Override
+    public int register(User user) {
+        user.setCreateTime(new Date());
+        user.setUpdateTime(new Date());
+        this.userDao.insert(user);
+        return 0;
     }
 }
