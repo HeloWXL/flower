@@ -1,5 +1,7 @@
 package com.bs.flower.entity;
 
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.enums.IdType;
 import lombok.Data;
 
 import java.util.Date;
@@ -14,7 +16,8 @@ import java.io.Serializable;
 @Data
 public class Order implements Serializable {
     private static final long serialVersionUID = -42638833750958591L;
-    
+
+    @TableId(value = "order_id",type = IdType.AUTO)
     private Integer orderId;
     
     private String orderNo;

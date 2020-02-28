@@ -1,5 +1,8 @@
 package com.bs.flower.entity;
 
+import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.enums.IdType;
 import lombok.Data;
 
 import java.util.Date;
@@ -14,7 +17,8 @@ import java.io.Serializable;
 @Data
 public class Product implements Serializable {
     private static final long serialVersionUID = 604317430278835337L;
-    
+
+    @TableId(value = "product_id",type = IdType.AUTO)
     private Integer productId;
     
     private String productName;
@@ -30,8 +34,9 @@ public class Product implements Serializable {
     private Integer classfy;
     
     private String color;
-    
-    private String desc;
+
+    @TableField("descr")
+    private String descr;
     
     private Date createTime;
     

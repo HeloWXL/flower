@@ -1,20 +1,32 @@
 package com.bs.flower.controller;
 
+import com.bs.flower.service.ProductService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.annotation.Resource;
+
 @Api("网页跳转")
 @Controller
 @RequestMapping("/")
 public class HomeController {
-    
+
+    /**
+     * 服务对象
+     */
+    @Resource
+    private ProductService productService;
     /**
     * @Description: 跳转到首页
     * @Date: 2020/2/28 12:16 AM
     */
     @ApiOperation("跳转首页")
-    @RequestMapping("/index")
+    @GetMapping("/index")
     public String toIndex(){
         return "index";
     }
@@ -24,7 +36,7 @@ public class HomeController {
     * @Date: 2020/2/28 12:16 AM
     */
     @ApiOperation("跳转商铺")
-    @RequestMapping("/shop")
+    @GetMapping("/shop")
     public String toShop(){
         return "shop";
     }
@@ -35,7 +47,7 @@ public class HomeController {
     * @Date: 2020/2/28 12:17 AM
     */
     @ApiOperation("跳转订单")
-    @RequestMapping("/order")
+    @GetMapping("/order")
     public String toOrder(){
         return "order";
     }
@@ -45,7 +57,7 @@ public class HomeController {
     * @Date: 2020/2/28 12:17 AM
     */
     @ApiOperation("跳转我的购物车")
-    @RequestMapping("/cart")
+    @GetMapping("/cart")
     public String toCart(){
         return "cart";
     }
@@ -55,9 +67,9 @@ public class HomeController {
      * @Date: 2020/2/28 12:17 AM
      */
     @ApiOperation("跳转商品详情")
-    @RequestMapping("/detail")
-    public String toDetail(){
+    @GetMapping("/detail/{id}")
+    public String toDetail(@PathVariable("id") Integer id, Model model){
+        model.addAttribute("product",this.productService.queryById(id));
         return "detail";
     }
-
 }

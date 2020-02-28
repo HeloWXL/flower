@@ -1,5 +1,7 @@
 package com.bs.flower.entity;
 
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.enums.IdType;
 import lombok.Data;
 
 import java.util.Date;
@@ -14,7 +16,8 @@ import java.io.Serializable;
 @Data
 public class Cart implements Serializable {
     private static final long serialVersionUID = -26871519970896873L;
-    
+
+    @TableId(value = "cart_id",type = IdType.AUTO)
     private Integer cartId;
     
     private Integer userId;

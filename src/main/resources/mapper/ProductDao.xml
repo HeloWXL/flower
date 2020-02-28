@@ -19,7 +19,7 @@
     <!--查询单个-->
     <select id="queryById" resultMap="ProductMap">
         select
-          product_id, product_name, primary_price, now_price, amout, path, classfy, color, desc, create_time, update_itme
+          product_id, product_name, primary_price, now_price, amout, path, classfy, color, descr, create_time, update_itme
         from flower.product
         where product_id = #{productId}
     </select>
@@ -27,7 +27,7 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="ProductMap">
         select
-          product_id, product_name, primary_price, now_price, amout, path, classfy, color, desc, create_time, update_itme
+          product_id, product_name, primary_price, now_price, amout, path, classfy, color, descr, create_time, update_itme
         from flower.product
         limit #{offset}, #{limit}
     </select>
@@ -35,7 +35,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="ProductMap">
         select
-          product_id, product_name, primary_price, now_price, amout, path, classfy, color, desc, create_time, update_itme
+          product_id, product_name, primary_price, now_price, amout, path, classfy, color, descr, create_time, update_itme
         from flower.product
         <where>
             <if test="productId != null">
@@ -76,7 +76,7 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="productId" useGeneratedKeys="true">
-        insert into flower.product(product_name, primary_price, now_price, amout, path, classfy, color, desc, create_time, update_itme)
+        insert into flower.product(product_name, primary_price, now_price, amout, path, classfy, color, descr, create_time, update_itme)
         values (#{productName}, #{primaryPrice}, #{nowPrice}, #{amout}, #{path}, #{classfy}, #{color}, #{desc}, #{createTime}, #{updateItme})
     </insert>
 
@@ -105,8 +105,8 @@
             <if test="color != null and color != ''">
                 color = #{color},
             </if>
-            <if test="desc != null and desc != ''">
-                desc = #{desc},
+            <if test="descr != null and descr != ''">
+                descr = #{desc},
             </if>
             <if test="createTime != null">
                 create_time = #{createTime},
