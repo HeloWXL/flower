@@ -90,15 +90,8 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <i class="lnr lnr-heart"></i>
-                                            <div class="notification">0</div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="minicart-btn">
+                                        <a href="${ctx}/cart" class="btn">
                                             <i class="lnr lnr-cart"></i>
-                                            <div class="notification">2</div>
                                         </a>
                                     </li>
                                 </ul>
@@ -106,7 +99,6 @@
                         </div>
                     </div>
                     <!-- mini cart area end -->
-
                 </div>
             </div>
         </div>
