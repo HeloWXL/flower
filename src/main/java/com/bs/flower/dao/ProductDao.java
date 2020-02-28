@@ -1,7 +1,6 @@
 package com.bs.flower.dao;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import com.bs.flower.entity.Cart;
 import com.bs.flower.entity.Product;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -11,7 +10,7 @@ import java.util.List;
  * (Product)表数据库访问层
  *
  * @author makejava
- * @since 2020-02-27 22:13:25
+ * @since 2020-02-28 09:33:50
  */
 @Mapper
 public interface ProductDao extends BaseMapper<Product> {
@@ -41,6 +40,7 @@ public interface ProductDao extends BaseMapper<Product> {
      * @return 对象列表
      */
     List<Product> queryAll(Product product);
+
 
     /**
      * 修改数据

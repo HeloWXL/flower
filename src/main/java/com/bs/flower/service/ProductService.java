@@ -7,7 +7,7 @@ import java.util.List;
  * (Product)表服务接口
  *
  * @author makejava
- * @since 2020-02-27 22:13:25
+ * @since 2020-02-28 09:33:50
  */
 public interface ProductService {
 

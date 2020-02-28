@@ -10,7 +10,7 @@ import javax.annotation.Resource;
  * (Product)表控制层
  *
  * @author makejava
- * @since 2020-02-27 22:13:25
+ * @since 2020-02-28 09:33:50
  */
 @RestController
 @RequestMapping("product")

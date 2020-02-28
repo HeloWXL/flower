@@ -11,7 +11,7 @@
  Target Server Version : 50717
  File Encoding         : 65001
 
- Date: 27/02/2020 21:53:56
+ Date: 28/02/2020 09:33:03
 */
 
 SET NAMES utf8mb4;
@@ -82,6 +82,10 @@ CREATE TABLE `product` (
   `desc` text,
   `create_time` datetime DEFAULT NULL,
   `update_itme` datetime DEFAULT NULL,
+  `material` varchar(100) DEFAULT NULL,
+  `packing` varchar(100) DEFAULT NULL,
+  `language` varchar(100) DEFAULT NULL,
+  `gift` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
