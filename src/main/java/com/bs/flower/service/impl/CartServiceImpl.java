@@ -1,11 +1,13 @@
 package com.bs.flower.service.impl;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.bs.flower.entity.Cart;
 import com.bs.flower.dao.CartDao;
 import com.bs.flower.service.CartService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -49,9 +51,9 @@ public class CartServiceImpl implements CartService {
      * @return 实例对象
      */
     @Override
-    public Cart insert(Cart cart) {
-        this.cartDao.insert(cart);
-        return cart;
+    public int insert(Cart cart) {
+        cart.setCreateTime(new Date());
+        return this.cartDao.insert(cart);
     }
 
     /**
@@ -75,5 +77,10 @@ public class CartServiceImpl implements CartService {
     @Override
     public boolean deleteById(Integer cartId) {
         return this.cartDao.deleteById(cartId) > 0;
+    }
+
+    @Override
+    public int deleteAllCart(Integer userId) {
+        return  cartDao.delete(new EntityWrapper<Cart>().eq("user_id",userId));
     }
 }

@@ -34,7 +34,7 @@ public interface CartService {
      * @param cart 实例对象
      * @return 实例对象
      */
-    Cart insert(Cart cart);
+    int insert(Cart cart);
 
     /**
      * 修改数据
@@ -52,4 +52,12 @@ public interface CartService {
      */
     boolean deleteById(Integer cartId);
 
+    /**
+    * @Description: 清空当前用户的购物车
+    * @params: 
+    * @return: 
+    * @Author: wangxianlin
+    * @Date: 2020/2/29 1:37 PM
+    */ 
+    int deleteAllCart(Integer userId);
 }

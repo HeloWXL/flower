@@ -2,6 +2,8 @@ package com.bs.flower.controller;
 
 import com.bs.flower.entity.Order;
 import com.bs.flower.service.OrderService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -12,6 +14,7 @@ import javax.annotation.Resource;
  * @author makejava
  * @since 2020-02-27 22:13:13
  */
+@Api("订单接口")
 @RestController
 @RequestMapping("order")
 public class OrderController {
@@ -21,15 +24,17 @@ public class OrderController {
     @Resource
     private OrderService orderService;
 
-    /**
-     * 通过主键查询单条数据
-     *
-     * @param id 主键
-     * @return 单条数据
-     */
-    @GetMapping("selectOne")
-    public Order selectOne(Integer id) {
-        return this.orderService.queryById(id);
+
+    @ApiOperation("查询订单详情")
+    @GetMapping("getOrderById")
+    public Order getOrderById(@RequestParam("orderId") int orderId){
+        return this.orderService.queryById(orderId);
+    }
+
+    @ApiOperation("添加订单")
+    @PostMapping("insert")
+    public Order insert(@RequestBody Order order){
+        return this.orderService.insert(order);
     }
 
 }

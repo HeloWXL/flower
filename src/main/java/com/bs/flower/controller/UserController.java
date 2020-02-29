@@ -2,6 +2,7 @@ package com.bs.flower.controller;
 
 import com.bs.flower.entity.User;
 import com.bs.flower.service.UserService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,7 @@ import java.io.IOException;
  * @author makejava
  * @since 2020-02-27 22:13:36
  */
+@Api("用户接口")
 @RestController
 @RequestMapping("user")
 public class UserController {

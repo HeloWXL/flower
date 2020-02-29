@@ -26,7 +26,7 @@ public class Cart implements Serializable {
     
     private Integer amout;
     
-    private Object price;
+    private double price;
     
     private Date createTime;
 }
