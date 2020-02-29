@@ -21,45 +21,50 @@ public class HomeController {
      */
     @Resource
     private ProductService productService;
+
     /**
-    * @Description: 跳转到首页
-    * @Date: 2020/2/28 12:16 AM
-    */
+     * @Description: 跳转到首页
+     * @Date: 2020/2/28 12:16 AM
+     */
     @ApiOperation("跳转首页")
     @GetMapping("/index")
-    public String toIndex(){
+    public String toIndex(Model model) {
+        //爱情类
+        model.addAttribute("loveProduct", productService.getAllProductByClassFy(1));
+        //生日类
+        model.addAttribute("birthProduct", productService.getAllProductByClassFy(2));
         return "index";
     }
 
     /**
-    * @Description: 跳转到商铺
-    * @Date: 2020/2/28 12:16 AM
-    */
+     * @Description: 跳转到商铺
+     * @Date: 2020/2/28 12:16 AM
+     */
     @ApiOperation("跳转商铺")
     @GetMapping("/shop")
-    public String toShop(Model model){
-        model.addAttribute("productList",productService.getAllProduct());
+    public String toShop(Model model) {
+        model.addAttribute("productList", productService.getAllProduct());
         return "shop";
     }
 
     /**
-    * @Description: 我的订单
-    * @Author: wangxianlin
-    * @Date: 2020/2/28 12:17 AM
-    */
+     * @Description: 我的订单
+     * @Author: wangxianlin
+     * @Date: 2020/2/28 12:17 AM
+     */
     @ApiOperation("跳转订单")
     @GetMapping("/order")
-    public String toOrder(){
+    public String toOrder() {
         return "order";
     }
 
     /**
-    * @Description: 跳转到我的购物车
-    * @Date: 2020/2/28 12:17 AM
-    */
+     * @Description: 跳转到我的购物车
+     * @Date: 2020/2/28 12:17 AM
+     */
     @ApiOperation("跳转我的购物车")
     @GetMapping("/cart")
-    public String toCart(){
+    public String toCart() {
         return "cart";
     }
 
@@ -69,8 +74,8 @@ public class HomeController {
      */
     @ApiOperation("跳转商品详情")
     @GetMapping("/detail/{id}")
-    public String toDetail(@PathVariable("id") Integer id, Model model){
-        model.addAttribute("product",this.productService.queryById(id));
+    public String toDetail(@PathVariable("id") Integer id, Model model) {
+        model.addAttribute("product", this.productService.queryById(id));
         return "detail";
     }
 
@@ -80,7 +85,7 @@ public class HomeController {
      */
     @ApiOperation("跳转登录页面")
     @GetMapping("/login")
-    public String toLogin(){
+    public String toLogin() {
         return "/user/login";
     }
 
@@ -90,7 +95,7 @@ public class HomeController {
      */
     @ApiOperation("跳转登录页面")
     @GetMapping("/register")
-    public String toRegister(){
+    public String toRegister() {
         return "/user/register";
     }
 

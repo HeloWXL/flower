@@ -262,12 +262,11 @@
                             <h3 class="sidebar-title">类别</h3>
                             <div class="sidebar-body">
                                 <ul class="shop-categories">
-                                    <li><a href="#">Jasmine <span>10</span></a></li>
-                                    <li><a href="#">Rose <span>5</span></a></li>
-                                    <li><a href="#">Orchid <span>8</span></a></li>
-                                    <li><a href="#">Blossom <span>4</span></a></li>
-                                    <li><a href="#">Hyacinth <span>5</span></a></li>
-                                    <li><a href="#">Bouquet <span>2</span></a></li>
+                                    <li><a href="#">茉莉花 <span>10</span></a></li>
+                                    <li><a href="#">玫瑰 <span>5</span></a></li>
+                                    <li><a href="#">兰花 <span>8</span></a></li>
+                                    <li><a href="#">康乃馨 <span>5</span></a></li>
+                                    <li><a href="#">向日葵 <span>2</span></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -282,10 +281,10 @@
                                     <div class="range-slider">
                                         <form action="#" class="d-flex align-items-center justify-content-between">
                                             <div class="price-input">
-                                                <label for="amount">Price: </label>
+                                                <label for="amount">价格: </label>
                                                 <input type="text" id="amount">
                                             </div>
-                                            <button class="filter-btn">filter</button>
+                                            <button class="filter-btn">查看</button>
                                         </form>
                                     </div>
                                 </div>
@@ -295,37 +294,19 @@
 
                         <!-- single sidebar start -->
                         <div class="sidebar-single">
-                            <h3 class="sidebar-title">brand</h3>
+                            <h3 class="sidebar-title">品牌</h3>
                             <div class="sidebar-body">
                                 <ul class="checkbox-container categories-list">
                                     <li>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                            <label class="custom-control-label" for="customCheck2">Studio (3)</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                            <label class="custom-control-label" for="customCheck3">Hastech (4)</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck4">
-                                            <label class="custom-control-label" for="customCheck4">Quickiin (15)</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                            <label class="custom-control-label" for="customCheck1">Graphic corner (10)</label>
+                                            <label class="custom-control-label" for="customCheck2">爱情 (3)</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="customCheck5">
-                                            <label class="custom-control-label" for="customCheck5">devItems (12)</label>
+                                            <label class="custom-control-label" for="customCheck5">生日 (12)</label>
                                         </div>
                                     </li>
                                 </ul>
@@ -342,25 +323,6 @@
                                         <div class="product-view-mode">
                                             <a class="active" href="#" data-target="grid-view" data-toggle="tooltip" title="Grid View"><i class="fa fa-th"></i></a>
                                             <a href="#" data-target="list-view" data-toggle="tooltip" title="List View"><i class="fa fa-list"></i></a>
-                                        </div>
-                                        <div class="product-amount">
-                                            <p>Showing 1–5 of 8 results</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-5 col-md-6 order-1 order-md-2">
-                                    <div class="top-bar-right">
-                                        <div class="product-short">
-                                            <p>Sort By : </p>
-                                            <select class="nice-select" name="sortby">
-                                                <option value="trending">Relevance</option>
-                                                <option value="sales">Name (A - Z)</option>
-                                                <option value="sales">Name (Z - A)</option>
-                                                <option value="rating">Price (Low &gt; High)</option>
-                                                <option value="date">Rating (Lowest)</option>
-                                                <option value="price-asc">Model (A - Z)</option>
-                                                <option value="price-asc">Model (Z - A)</option>
-                                            </select>
                                         </div>
                                     </div>
                                 </div>

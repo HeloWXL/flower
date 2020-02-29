@@ -82,4 +82,9 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> getAllProduct() {
         return this.productDao.selectList(new EntityWrapper<Product>());
     }
+
+    @Override
+    public List<Product> getAllProductByClassFy(int classFy) {
+        return this.productDao.selectList(new EntityWrapper<Product>().eq("classfy",classFy));
+    }
 }

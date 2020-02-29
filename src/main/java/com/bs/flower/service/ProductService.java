@@ -57,4 +57,14 @@ public interface ProductService {
      * @Date: 2020/2/29 9:57 PM
      */
     List<Product> getAllProduct();
+    
+    /**
+    * @Description: 按照分类查询
+    * @params: 
+    * @return: 
+    * @Author: wangxianlin
+    * @Date: 2020/2/29 10:46 PM
+    */ 
+    List<Product> getAllProductByClassFy(int classFy);
+
 }
