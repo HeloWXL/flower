@@ -114,7 +114,7 @@ public class ProductController {
     }
 
     @ApiOperation(value = "获取图片路径")
-    @RequestMapping(value = "/getLocalImg.do", method = RequestMethod.GET)
+    @RequestMapping(value = "/getLocalImg", method = RequestMethod.GET)
     public void getLocalImg(HttpServletRequest request, HttpServletResponse response, @RequestParam("path") String path){
         try {
             File file = new File(ConfigUtil.getValue("productDir") + path);
