@@ -23,4 +23,10 @@ public class CartProductVo {
 
     private String color;
 
+    private String packing;
+
+    private String language;
+
+    private String gift;
+
 }

@@ -13,8 +13,6 @@
           rel="stylesheet">
     <link href="${ctx}/res/css/index/vendor.css" rel="stylesheet">
     <link href="${ctx}/res/css/index/style.css" rel="stylesheet">
-    <link href="${ctx}/res/layui/css/layui.css" rel="stylesheet">
-
     <script>
         var ctx = '${ctx}';
         var user = '${USERSESSION}';
@@ -29,7 +27,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="welcome-message">
-                            <p>欢迎来到我的在线花店</p>
+                            <p>Welcome to My Shop</p>
                         </div>
                     </div>
                 </div>
@@ -167,60 +165,6 @@
                 <!-- mobile menu navigation end -->
             </div>
             <!-- mobile menu end -->
-
-            <div class="mobile-settings">
-                <ul class="nav">
-                    <li>
-                        <div class="dropdown mobile-top-dropdown">
-                            <a href="#" class="dropdown-toggle" id="currency" data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false">
-                                Currency
-                                <i class="fa fa-angle-down"></i>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="currency">
-                                <a class="dropdown-item" href="#">$ USD</a>
-                                <a class="dropdown-item" href="#">$ EURO</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="dropdown mobile-top-dropdown">
-                            <a href="#" class="dropdown-toggle" id="myaccount" data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false">
-                                My Account
-                                <i class="fa fa-angle-down"></i>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="myaccount">
-                                <a class="dropdown-item" href="#">my account</a>
-                                <a class="dropdown-item" href="#"> login</a>
-                                <a class="dropdown-item" href="#">register</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- offcanvas widget area start -->
-            <div class="offcanvas-widget-area">
-                <div class="off-canvas-contact-widget">
-                    <ul>
-                        <li><i class="fa fa-mobile"></i>
-                            <a href="#">0123456789</a>
-                        </li>
-                        <li><i class="fa fa-envelope-o"></i>
-                            <a href="#">info@yourdomain.com</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="off-canvas-social-widget">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                    <a href="#"><i class="fa fa-youtube-play"></i></a>
-                </div>
-            </div>
-            <!-- offcanvas widget area end -->
         </div>
     </div>
 </aside>
@@ -239,10 +183,10 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="hero-slider-content slide-1">
-                                    <span>valentine gift</span>
-                                    <h1>Fresh Your Mind</h1>
-                                    <h2>& Feeling love</h2>
-                                    <a href="${ctx}/shop" class="btn-hero">shop now</a>
+                                    <span>情人节礼物</span>
+                                    <h1>清新的</h1>
+                                    <h2>& 感受爱</h2>
+                                    <a href="${ctx}/shop" class="btn-hero">现在就行动</a>
                                 </div>
                             </div>
                         </div>
@@ -258,10 +202,10 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="hero-slider-content slide-2">
-                                    <span>valentine gift</span>
+                                    <span>情人节礼物</span>
                                     <h1>Fresh Your Mind</h1>
-                                    <h2>& Feeling love</h2>
-                                    <a href="${ctx}/shop" class="btn-hero">shop now</a>
+                                    <h2>& 感受爱</h2>
+                                    <a href="${ctx}/shop" class="btn-hero">现在就行动</a>
                                 </div>
                             </div>
                         </div>
@@ -525,9 +469,9 @@
                                     </div>
                                     <div class="button-group">
                                         <a data-toggle="modal" data-target="#quick_view"><span
-                                                data-toggle="tooltip" data-placement="left" title="查看" productId="${product.productId}"><i
+                                                data-toggle="tooltip" data-placement="left" title="查看" productId="${b_product.productId}"><i
                                                 class="lnr lnr-magnifier"></i></span></a>
-                                        <a data-toggle="tooltip" data-placement="left" title="加入购物车" productId="${product.productId}"><i
+                                        <a  data-placement="left" title="加入购物车" productid="${b_product.productId}"><i
                                                 class="lnr lnr-cart"></i></a>
                                     </div>
                                 </figure>
@@ -763,7 +707,7 @@
 </div>
 <!-- Scroll to Top End -->
 </body>
-<script src="${ctx}/res/layui/layui.js" type="application/javascript"></script>
+
 <script src="${ctx}/res/js/index/vendor.js" type="application/javascript"></script>
 <script src="${ctx}/res/js/index/active.js" type="application/javascript"></script>
 <script src="${ctx}/res/js/index/index.js" type="application/javascript"></script>

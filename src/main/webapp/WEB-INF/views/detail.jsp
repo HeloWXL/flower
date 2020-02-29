@@ -29,7 +29,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="welcome-message">
-                            <p>欢迎来到我的在线花店</p>
+                            <p>Welcome to My Shop</p>
                         </div>
                     </div>
                 </div>

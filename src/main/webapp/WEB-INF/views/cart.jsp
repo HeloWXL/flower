@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <link rel="shortcut icon" href="${ctx}/res/img/logo.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="${ctx}/res/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="${ctx}/res/css/cart//style.css">
+    <link rel="stylesheet" href="${ctx}/res/css/cart/style.css">
+    <link rel="stylesheet" href="${ctx}/res/layui/css/layui.css">
     <script>
         var ctx = '${ctx}';
         var user = '${USERSESSION}';
@@ -59,7 +60,7 @@
                 <div class="float-right text-right" id="sum">
                     <h4>总价:</h4>
                     <h1>46元</h1>
-                    <p>(不包括送货)</p>
+                    <p>(不包括运费)</p>
                 </div>
             </div>
         </div>
@@ -71,9 +72,8 @@
     </div>
 </section>
 </body>
-
-<!-- Placed at the end of the document so the pages load faster -->
 <script src="${ctx}/res/js/jquery-3.1.1.min.js"></script>
+<script src="${ctx}/res/layui/layui.js"></script>
 <script src="${ctx}/res/bootstrap/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
         integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
@@ -86,8 +86,33 @@
         }
         //展示我的购物车
         showMyCart(userId);
-    });
 
+        //动态获取删除按钮，并删除购物车
+        $("tbody").on('click',"button[name='delete']",function(){
+            //获取购物车ID
+           var cartId = $(this).attr("cart_id");
+           var _this = this;
+            deleteCartById(cartId,_this)
+        })
+    });
+    
+    function deleteCartById(id,_this) {
+        $.ajax({
+            url:ctx+'/cart/deleteCartId',
+            data:{
+                cartId:id
+            },
+            type:'get',
+            dataType:'json',
+            success:function (res) {
+                if(res==true){
+                    $(_this).closest('tr').remove();
+                }else{
+                    alert("服务器内部错误");
+                }
+            }
+        })
+    }
     /**
      * 显示我的购物车
      * @param userId
@@ -109,19 +134,21 @@
                         '                                    <img src="${ctx}/product/getLocalImg?path=' + product.path + '" alt="" class="img-fluid">\n' +
                         '                                </div>\n' +
                         '                                <div class="col-md-9 text-left mt-sm-2">\n' +
-                        '                                    <h4>' + product.productName + '</h4>\n' +
-                        '                                    <p>' + product.color + '</p>\n' +
+                        '                                    <h4>商品名称：' + product.productName + '</h4>\n' +
+                        '                                    <p style="margin-bottom: 0.5em;">颜色：' + product.color + '</p>\n' +
+                        '                                    <p style="margin-bottom: 0.5em;">包装：' + product.packing + '</p>\n' +
+                        '                                    <p style="margin-bottom: 0.5em;">花语：' + product.language + '</p>\n' +
+                        '                                    <p style="margin-bottom: 0.5em;">附送赠品：' + product.gift + '</p>\n' +
                         '                                </div>\n' +
                         '                            </div>\n' +
                         '                        </td>\n' +
-                        '                        <td data-th="Price" class="price">' + product.price + '元</td>\n' +
-                        '                        <td data-th="Quantity">\n' +
+                        '                        <td data-th="Price" class="price" style="vertical-align: middle;">' + product.price + '元</td>\n' +
+                        '                        <td data-th="Quantity" style="vertical-align: middle;">\n' +
                         '                            <input type="number" class="form-control text-center" value="'+product.amout+'">\n' +
                         '                        </td>\n' +
-                        '                        <td class="actions" data-th="">\n' +
+                        '                        <td class="actions" data-th="" style="vertical-align: middle;">\n' +
                         '                            <div class="text-right">\n' +
-                        '                                <button class="btn btn-white btn-md mb-2"><i class="fas fa-sync"></i></button>\n' +
-                        '                                <button class="btn btn-white btn-md mb-2"><i class="fas fa-trash"></i></button>\n' +
+                        '                                <button class="btn btn-white btn-md mb-2" cart_id = '+product.cartId+' name="delete"><i class="layui-icon">&#xe640;</i></button>\n' +
                         '                            </div>\n' +
                         '                        </td>\n' +
                         '                    </tr>')
@@ -130,5 +157,6 @@
             }
         })
     }
+
 </script>
 </html>

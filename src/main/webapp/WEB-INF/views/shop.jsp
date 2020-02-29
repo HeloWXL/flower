@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
@@ -16,6 +15,8 @@
     <link href="${ctx}/res/css/index/style.css" rel="stylesheet">
     <script>
         var ctx = '${ctx}';
+        var user = '${USERSESSION}';
+        var userId = '${USERSESSION.userId}';
     </script>
 </head>
 <body>
@@ -29,7 +30,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="welcome-message">
-                            <p>欢迎来到我的在线花店</p>
+                            <p>Welcome to My Shop</p>
                         </div>
                     </div>
                 </div>
@@ -168,61 +169,7 @@
                         <li><a href="${ctx}/shop">我的商铺</a></li>
                     </ul>
                 </nav>
-                <!-- mobile menu navigation end -->
             </div>
-            <!-- mobile menu end -->
-
-            <div class="mobile-settings">
-                <ul class="nav">
-                    <li>
-                        <div class="dropdown mobile-top-dropdown">
-                            <a href="#" class="dropdown-toggle" id="currency" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Currency
-                                <i class="fa fa-angle-down"></i>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="currency">
-                                <a class="dropdown-item" href="#">$ USD</a>
-                                <a class="dropdown-item" href="#">$ EURO</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="dropdown mobile-top-dropdown">
-                            <a href="#" class="dropdown-toggle" id="myaccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                My Account
-                                <i class="fa fa-angle-down"></i>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="myaccount">
-                                <a class="dropdown-item" href="#">my account</a>
-                                <a class="dropdown-item" href="#"> login</a>
-                                <a class="dropdown-item" href="#">register</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- offcanvas widget area start -->
-            <div class="offcanvas-widget-area">
-                <div class="off-canvas-contact-widget">
-                    <ul>
-                        <li><i class="fa fa-mobile"></i>
-                            <a href="#">0123456789</a>
-                        </li>
-                        <li><i class="fa fa-envelope-o"></i>
-                            <a href="#">info@yourdomain.com</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="off-canvas-social-widget">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                    <a href="#"><i class="fa fa-youtube-play"></i></a>
-                </div>
-            </div>
-            <!-- offcanvas widget area end -->
         </div>
     </div>
 </aside>
@@ -321,8 +268,10 @@
                                 <div class="col-lg-7 col-md-6 order-2 order-md-1">
                                     <div class="top-bar-left">
                                         <div class="product-view-mode">
-                                            <a class="active" href="#" data-target="grid-view" data-toggle="tooltip" title="Grid View"><i class="fa fa-th"></i></a>
-                                            <a href="#" data-target="list-view" data-toggle="tooltip" title="List View"><i class="fa fa-list"></i></a>
+                                            <a class="active" href="#" data-target="grid-view" data-toggle="tooltip"
+                                               title="Grid View"><i class="fa fa-th"></i></a>
+                                            <a href="#" data-target="list-view" data-toggle="tooltip" title="List View"><i
+                                                    class="fa fa-list"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -334,8 +283,12 @@
                                     <div class="product-item">
                                         <figure class="product-thumb">
                                             <a href="${ctx}/detail/${product.productId}">
-                                                <img class="pri-img" src="${ctx}/product/getLocalImg?path=${product.path}" alt="product">
-                                                <img class="sec-img" src="${ctx}/product/getLocalImg?path=${product.path}" alt="product">
+                                                <img class="pri-img"
+                                                     src="${ctx}/product/getLocalImg?path=${product.path}"
+                                                     alt="product">
+                                                <img class="sec-img"
+                                                     src="${ctx}/product/getLocalImg?path=${product.path}"
+                                                     alt="product">
                                             </a>
                                             <div class="product-badge">
                                                 <div class="product-label new">
@@ -346,9 +299,14 @@
                                                 </div>
                                             </div>
                                             <div class="button-group">
-                                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                                <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                                <a data-toggle="modal" data-target="#quick_view"><span
+                                                        data-toggle="tooltip"
+                                                        data-placement="left"
+                                                        title="查看" productId="${product.productId}"><i
+                                                        class="lnr lnr-magnifier"></i></span></a>
+                                                <a  data-placement="left" title="加入购物车"
+                                                    productId="${product.productId}"><i
+                                                        class="lnr lnr-cart"></i></a>
                                             </div>
                                         </figure>
                                         <div class="product-caption">
@@ -364,8 +322,12 @@
                                     <div class="product-list-item">
                                         <figure class="product-thumb">
                                             <a href="${ctx}//detail/${product.productId}">
-                                                <img class="pri-img" src="${ctx}/product/getLocalImg?path=${product.path}" alt="product">
-                                                <img class="sec-img" src="${ctx}/product/getLocalImg?path=${product.path}" alt="product">
+                                                <img class="pri-img"
+                                                     src="${ctx}/product/getLocalImg?path=${product.path}"
+                                                     alt="product">
+                                                <img class="sec-img"
+                                                     src="${ctx}/product/getLocalImg?path=${product.path}"
+                                                     alt="product">
                                             </a>
                                             <div class="product-badge">
                                                 <div class="product-label new">
@@ -377,18 +339,22 @@
                                             </div>
                                         </figure>
                                         <div class="product-content-list">
-                                            <h5 class="product-name"><a href="${ctx}//detail/${product.productId}">${product.productName}</a>
+                                            <h5 class="product-name"><a
+                                                    href="${ctx}//detail/${product.productId}">${product.productName}</a>
                                             </h5>
                                             <div class="price-box">
                                                 <span class="price-regular">${product.nowPrice}元</span>
                                                 <span class="price-old"><del>${product.primaryPrice}元</del></span>
                                             </div>
                                             <p>
-                                                ${product.language}
+                                                    ${product.language}
                                             </p>
                                             <div class="button-group-list">
-                                                <a class="btn-big" href="#" data-toggle="tooltip" title="Add to Cart"><i class="lnr lnr-cart"></i>加入购物车</a>
-                                                <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip"  title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
+                                                <a class="btn-big" href="#" data-toggle="tooltip" title="Add to Cart"><i
+                                                        class="lnr lnr-cart"></i>加入购物车</a>
+                                                <a href="#" data-toggle="modal" data-target="#quick_view"><span
+                                                        data-toggle="tooltip" title="Quick View"><i
+                                                        class="lnr lnr-magnifier"></i></span></a>
                                             </div>
                                         </div>
                                     </div>
@@ -432,30 +398,38 @@
                         <div class="col-lg-5 col-md-5">
                             <div class="product-large-slider">
                                 <div class="pro-large-img">
-                                    <img src="${ctx}/res/css/img/product/product-details-img1.jpg" alt="product-details" />
+                                    <img src="${ctx}/res/css/img/product/product-details-img1.jpg"
+                                         alt="product-details"/>
                                 </div>
                                 <div class="pro-large-img">
-                                    <img src="${ctx}/res/css/img/product/product-details-img2.jpg" alt="product-details" />
+                                    <img src="${ctx}/res/css/img/product/product-details-img2.jpg"
+                                         alt="product-details"/>
                                 </div>
                                 <div class="pro-large-img">
-                                    <img src="${ctx}/res/css/img/product/product-details-img3.jpg" alt="product-details" />
+                                    <img src="${ctx}/res/css/img/product/product-details-img3.jpg"
+                                         alt="product-details"/>
                                 </div>
                                 <div class="pro-large-img">
-                                    <img src="${ctx}/res/css/img/product/product-details-img4.jpg" alt="product-details" />
+                                    <img src="${ctx}/res/css/img/product/product-details-img4.jpg"
+                                         alt="product-details"/>
                                 </div>
                             </div>
                             <div class="pro-nav slick-row-10 slick-arrow-style">
                                 <div class="pro-nav-thumb">
-                                    <img src="${ctx}/res/css/img/product/product-details-img1.jpg" alt="product-details" />
+                                    <img src="${ctx}/res/css/img/product/product-details-img1.jpg"
+                                         alt="product-details"/>
                                 </div>
                                 <div class="pro-nav-thumb">
-                                    <img src="${ctx}/res/css/img/product/product-details-img2.jpg" alt="product-details" />
+                                    <img src="${ctx}/res/css/img/product/product-details-img2.jpg"
+                                         alt="product-details"/>
                                 </div>
                                 <div class="pro-nav-thumb">
-                                    <img src="${ctx}/res/css/img/product/product-details-img3.jpg" alt="product-details" />
+                                    <img src="${ctx}/res/css/img/product/product-details-img3.jpg"
+                                         alt="product-details"/>
                                 </div>
                                 <div class="pro-nav-thumb">
-                                    <img src="${ctx}/res/css/img/product/product-details-img4.jpg" alt="product-details" />
+                                    <img src="${ctx}/res/css/img/product/product-details-img4.jpg"
+                                         alt="product-details"/>
                                 </div>
                             </div>
                         </div>
@@ -482,7 +456,8 @@
                                     <i class="fa fa-check-circle"></i>
                                     <span>200 in stock</span>
                                 </div>
-                                <p class="pro-desc">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                                <p class="pro-desc">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                    nonumy
                                     eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
                                 <div class="quantity-cart-box d-flex align-items-center">
                                     <h5>qty:</h5>
@@ -618,6 +593,8 @@
 </div>
 <!-- Scroll to Top End -->
 </body>
+<script type="text/javascript" src="${ctx}/res/js/jquery-3.1.1.min.js"></script>
+<script src="${ctx}/res/js/shop/shop.js"></script>
 <script src="${ctx}/res/js/index/vendor.js"></script>
 <script src="${ctx}/res/js/index/active.js"></script>
 </html>
