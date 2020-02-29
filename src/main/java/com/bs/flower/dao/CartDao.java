@@ -1,10 +1,13 @@
 package com.bs.flower.dao;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.bs.flower.Vo.CartProductVo;
 import com.bs.flower.entity.Admin;
 import com.bs.flower.entity.Cart;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+
 import java.util.List;
 
 /**
@@ -57,5 +60,15 @@ public interface CartDao extends BaseMapper<Cart> {
      * @return 影响行数
      */
     int deleteById(Integer cartId);
+
+    /**
+    * @Description: 查询当前用户的购物车列表
+    * @Date: 2020/2/29 1:52 PM
+    */ 
+    @Select("select c.create_time,c.price,c.amout,p.path,p.product_name,p.color,c.product_id,c.cart_id\n" +
+            "from cart c ,product p \n" +
+            "where c.product_id = p.product_id\n" +
+            "and c.user_id = #{userId}")
+    List<CartProductVo> getAllCartByUserId(int userId);
 
 }

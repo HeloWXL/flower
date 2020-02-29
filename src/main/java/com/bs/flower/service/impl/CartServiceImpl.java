@@ -1,6 +1,7 @@
 package com.bs.flower.service.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.bs.flower.Vo.CartProductVo;
 import com.bs.flower.entity.Cart;
 import com.bs.flower.dao.CartDao;
 import com.bs.flower.service.CartService;
@@ -82,5 +83,10 @@ public class CartServiceImpl implements CartService {
     @Override
     public int deleteAllCart(Integer userId) {
         return  cartDao.delete(new EntityWrapper<Cart>().eq("user_id",userId));
+    }
+
+    @Override
+    public List<CartProductVo> getAllCartByUserId(int userId) {
+        return cartDao.getAllCartByUserId(userId);
     }
 }

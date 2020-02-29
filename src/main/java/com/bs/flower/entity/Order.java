@@ -26,7 +26,7 @@ public class Order implements Serializable {
     
     private Integer productId;
     
-    private Object price;
+    private double price;
     
     private Integer amout;
     
