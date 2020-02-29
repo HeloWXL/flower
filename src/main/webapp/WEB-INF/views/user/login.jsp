@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="${ctx}/res/css/user/style.css" rel='stylesheet' type='text/css' />
     <script type="text/javascript" src="${ctx}/res/js/jquery-3.1.1.min.js"></script>
+    <link rel="shortcut icon" href="${ctx}/res/img/logo.ico" type="image/x-icon"/>
     <script>
         var ctx = '${ctx}';
     </script>

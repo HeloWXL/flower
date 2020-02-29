@@ -6,7 +6,7 @@
     <title>我的购物车</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <link rel="shortcut icon" href="${ctx}/res/img/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="${ctx}/res/img/logo.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="${ctx}/res/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="${ctx}/res/css/cart//style.css">
     <script>

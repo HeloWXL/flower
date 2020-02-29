@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="meta description">
-    <link rel="shortcut icon" href="${ctx}/res/img/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="${ctx}/res/img/logo.ico" type="image/x-icon"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,900%7CYesteryear"
           rel="stylesheet">
     <link href="${ctx}/res/css/index/vendor.css" rel="stylesheet">

@@ -1,5 +1,4 @@
 $(function () {
-
     //加入购物车
     $('a[title="加入购物车"]').click(function () {
         //获取商品的ID
@@ -36,9 +35,9 @@ function addCart(userId,productId,price) {
         contentType: 'application/json; charset=utf-8',
         success:function (res) {
             if(res==1){
-                alert("加入购物车成功");
+                layer.msg('加入购物车成功', {icon: 1, time: 1500});
             }else{
-                alert("加入失败");
+                layer.msg('加入购物车失败', {icon: 5, time: 1500});
             }
         }
     })
