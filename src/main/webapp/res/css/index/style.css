@@ -4454,7 +4454,7 @@ only screen and (max-width: 767.98px) {
 
 .product-details-des .color-categories {
     padding: 5px 0 8px;
-    line-height: 1;
+    line-height: 2;
 }
 
 .product-details-des .color-categories li {

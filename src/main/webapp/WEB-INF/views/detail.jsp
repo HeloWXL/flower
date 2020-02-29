@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
@@ -16,6 +15,8 @@
     <link href="${ctx}/res/css/index/style.css" rel="stylesheet">
     <script>
         var ctx = '${ctx}';
+        var user = '${USERSESSION}';
+        var userId = '${USERSESSION.userId}';
     </script>
 </head>
 <body>
@@ -184,7 +185,8 @@
                 <ul class="nav">
                     <li>
                         <div class="dropdown mobile-top-dropdown">
-                            <a href="#" class="dropdown-toggle" id="currency" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a href="#" class="dropdown-toggle" id="currency" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
                                 Currency
                                 <i class="fa fa-angle-down"></i>
                             </a>
@@ -196,7 +198,8 @@
                     </li>
                     <li>
                         <div class="dropdown mobile-top-dropdown">
-                            <a href="#" class="dropdown-toggle" id="myaccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a href="#" class="dropdown-toggle" id="myaccount" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
                                 My Account
                                 <i class="fa fa-angle-down"></i>
                             </a>
@@ -237,7 +240,6 @@
 <!-- off-canvas menu end -->
 
 
-
 <!-- main wrapper start -->
 <main>
     <!-- breadcrumb area start -->
@@ -272,97 +274,55 @@
                             <div class="col-lg-5">
                                 <div class="product-large-slider">
                                     <div class="pro-large-img img-zoom">
-                                        <img src="${ctx}/res/img/product/product-details-img1.jpg" alt="product-details" />
-                                    </div>
-                                    <div class="pro-large-img img-zoom">
-                                        <img src="${ctx}/res/img/product/product-details-img2.jpg" alt="product-details" />
-                                    </div>
-                                    <div class="pro-large-img img-zoom">
-                                        <img src="${ctx}/res/img/product/product-details-img3.jpg" alt="product-details" />
-                                    </div>
-                                    <div class="pro-large-img img-zoom">
-                                        <img src="${ctx}/res/img/product/product-details-img4.jpg" alt="product-details" />
-                                    </div>
-                                    <div class="pro-large-img img-zoom">
-                                        <img src="${ctx}/res/img/product/product-details-img5.jpg" alt="product-details" />
-                                    </div>
-                                </div>
-                                <div class="pro-nav slick-row-10 slick-arrow-style" style="display: none">
-                                    <div class="pro-nav-thumb">
-                                        <img src="${ctx}/res/img/product/product-details-img1.jpg" alt="product-details" />
-                                    </div>
-                                    <div class="pro-nav-thumb">
-                                        <img src="${ctx}/res/img/product/product-details-img2.jpg" alt="product-details" />
-                                    </div>
-                                    <div class="pro-nav-thumb">
-                                        <img src="${ctx}/res/img/product/product-details-img3.jpg" alt="product-details" />
-                                    </div>
-                                    <div class="pro-nav-thumb">
-                                        <img src="${ctx}/res/img/product/product-details-img4.jpg" alt="product-details" />
-                                    </div>
-                                    <div class="pro-nav-thumb">
-                                        <img src="${ctx}/res/img/product/product-details-img5.jpg" alt="product-details" />
+                                        <img src="${ctx}/product/getLocalImg?path=${product.path}"
+                                             alt="product-details"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-7">
                                 <div class="product-details-des">
                                     <h3 class="product-name">${product.productName}</h3>
-                                    <div class="ratings d-flex">
-                                        <span><i class="lnr lnr-star"></i></span>
-                                        <span><i class="lnr lnr-star"></i></span>
-                                        <span><i class="lnr lnr-star"></i></span>
-                                        <span><i class="lnr lnr-star"></i></span>
-                                        <span><i class="lnr lnr-star"></i></span>
-                                        <div class="pro-review">
-                                            <span>1人看过</span>
-                                        </div>
-                                    </div>
-                                    <div class="price-box">
+                                    <div class="price-box" id="price">
                                         <span class="price-regular">${product.nowPrice}元</span>
                                         <span class="price-old"><del>${product.primaryPrice}元</del></span>
                                     </div>
                                     <h5 class="offer-text"><strong>快点抢购吧</strong> 倒计时</h5>
                                     <div class="product-countdown" data-countdown="2020/03/25"></div>
-                                    <div class="availability">
-                                        <i class="fa fa-check-circle"></i>
-                                        <span>200 in stock</span>
+                                    <div class="color-option">
+                                        <h5>花材 :</h5>
+                                        <div>${product.material}</div>
                                     </div>
-                                    <p class="pro-desc">${product.descr}</p>
-                                    <div class="quantity-cart-box d-flex align-items-center">
-                                        <h5>qty:</h5>
-                                        <div class="quantity">
-                                            <div class="pro-qty"><input type="text" value="1"></div>
-                                        </div>
-                                        <div class="action_link">
-                                            <a class="btn btn-cart2" href="#">加入购物车</a>
-                                        </div>
+
+                                    <div class="color-option">
+                                        <h5>包装 :</h5>
+                                        <div>${product.packing}</div>
                                     </div>
-                                    <div class="pro-size">
-                                        <h5>size :</h5>
-                                        <select class="nice-select">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
+
+                                    <div class="color-option">
+                                        <h5>花语 :</h5>
+                                        <div>${product.language}</div>
                                     </div>
                                     <div class="color-option">
-                                        <h5>color :</h5>
+                                        <h5>颜色 :</h5>
                                         <ul class="color-categories">
                                             <li>
-                                                <a class="c-lightblue" href="#" title="LightSteelblue"></a>
-                                            </li>
-                                            <li>
-                                                <a class="c-darktan" href="#" title="Darktan"></a>
-                                            </li>
-                                            <li>
-                                                <a class="c-grey" href="#" title="Grey"></a>
-                                            </li>
-                                            <li>
-                                                <a class="c-brown" href="#" title="Brown"></a>
+                                                ${product.color}
                                             </li>
                                         </ul>
+                                    </div>
+                                    <div class="color-option">
+                                        <h5>附送赠品 :</h5>
+                                        <div>${product.gift}</div>
+                                    </div>
+                                    <div class="quantity-cart-box d-flex align-items-center">
+                                        <h5>数量:</h5>
+                                        <div class="quantity">
+                                            <div class="pro-qty"><input type="text" value="1" id="amout"></div>
+                                        </div>
+                                        <div class="action_link">
+                                            <a class="btn btn-cart2" product_id="${product.productId}"
+                                               style="color: #ffffff;" onclick="addCart(this)">加入购物车</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -395,10 +355,6 @@
                                                 <tr>
                                                     <td>color</td>
                                                     <td>${product.color}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>size</td>
-                                                    <td>L, M, S</td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -443,9 +399,13 @@
                                     </div>
                                 </div>
                                 <div class="button-group">
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i
+                                            class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span
+                                            data-toggle="tooltip" data-placement="left" title="Quick View"><i
+                                            class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i
+                                            class="lnr lnr-cart"></i></a>
                                 </div>
                             </figure>
                             <div class="product-caption">
@@ -476,9 +436,13 @@
                                     </div>
                                 </div>
                                 <div class="button-group">
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i
+                                            class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span
+                                            data-toggle="tooltip" data-placement="left" title="Quick View"><i
+                                            class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i
+                                            class="lnr lnr-cart"></i></a>
                                 </div>
                             </figure>
                             <div class="product-caption">
@@ -509,9 +473,13 @@
                                     </div>
                                 </div>
                                 <div class="button-group">
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i
+                                            class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span
+                                            data-toggle="tooltip" data-placement="left" title="Quick View"><i
+                                            class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i
+                                            class="lnr lnr-cart"></i></a>
                                 </div>
                             </figure>
                             <div class="product-caption">
@@ -542,9 +510,13 @@
                                     </div>
                                 </div>
                                 <div class="button-group">
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i
+                                            class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span
+                                            data-toggle="tooltip" data-placement="left" title="Quick View"><i
+                                            class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i
+                                            class="lnr lnr-cart"></i></a>
                                 </div>
                             </figure>
                             <div class="product-caption">
@@ -572,9 +544,13 @@
                                     </div>
                                 </div>
                                 <div class="button-group">
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i
+                                            class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span
+                                            data-toggle="tooltip" data-placement="left" title="Quick View"><i
+                                            class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i
+                                            class="lnr lnr-cart"></i></a>
                                 </div>
                             </figure>
                             <div class="product-caption">
@@ -605,9 +581,13 @@
                                     </div>
                                 </div>
                                 <div class="button-group">
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i class="lnr lnr-heart"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="lnr lnr-magnifier"></i></span></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="lnr lnr-cart"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to wishlist"><i
+                                            class="lnr lnr-heart"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#quick_view"><span
+                                            data-toggle="tooltip" data-placement="left" title="Quick View"><i
+                                            class="lnr lnr-magnifier"></i></span></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i
+                                            class="lnr lnr-cart"></i></a>
                                 </div>
                             </figure>
                             <div class="product-caption">
@@ -733,6 +713,50 @@
 </div>
 <!-- Scroll to Top End -->
 </body>
+<script src="${ctx}/res/js/jquery-3.1.1.min.js"></script>
 <script src="${ctx}/res/js/index/vendor.js"></script>
 <script src="${ctx}/res/js/index/active.js"></script>
+<script>
+    function addCart(_this) {
+        if (userId == 0) {
+            alert("用户未登录");
+            location.href = ctx + '/login';
+        }
+        var productId = $(_this).attr("product_id");
+        var price = $("#price .price-regular").html();
+        price = price.slice(0,-3);
+        var amout = $("#amout").val();
+        addCartToDb(userId,productId,price*amout,amout)
+    }
+
+    /**
+     * 加入购物车
+     * @param userId
+     * @param productId
+     * @param price
+     */
+    function addCartToDb(userId, productId, price, amout) {
+        var cart = {
+            userId: userId,
+            productId: productId,
+            amout: amout,
+            price: price,
+            createTime: new Date()
+        };
+        $.ajax({
+            url: ctx + '/cart/insertCart',
+            data: JSON.stringify(cart),
+            type: 'post',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            success: function (res) {
+                if (res == 1) {
+                    alert('加入购物车成功');
+                } else {
+                    alert('加入购物车失败');
+                }
+            }
+        })
+    }
+</script>
 </html>
