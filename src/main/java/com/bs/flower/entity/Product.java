@@ -18,27 +18,36 @@ import java.io.Serializable;
 public class Product implements Serializable {
     private static final long serialVersionUID = 604317430278835337L;
 
-    @TableId(value = "product_id",type = IdType.AUTO)
+    @TableId(value = "product_id", type = IdType.AUTO)
     private Integer productId;
-    
+
     private String productName;
-    
-    private Object primaryPrice;
-    
-    private Object nowPrice;
-    
+
+    private double primaryPrice;
+
+    private double nowPrice;
+
     private Integer amout;
-    
+
     private String path;
-    
+
     private Integer classfy;
-    
+
     private String color;
 
     @TableField("descr")
     private String descr;
-    
+
     private Date createTime;
-    
+
     private Date updateItme;
+
+    private String material;
+
+    private String packing;
+
+    private String language;
+
+    private String gift;
+
 }

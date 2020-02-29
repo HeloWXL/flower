@@ -79,20 +79,25 @@ public class UserServiceImpl implements UserService {
         return this.userDao.deleteById(userId) > 0;
     }
 
+    /**
+    * @Description: 登录认证
+    * @Date: 2020/2/29 11:51 AM
+    */ 
     @Override
     public User checkLogin(String userName,String password) {
         User user = new User();
         user.setPassword(password);
         user.setUserName(userName);
         return  userDao.selectOne(user);
-
     }
 
+    /**
+    * @Description: 用户注册
+    * @Date: 2020/2/29 11:51 AM
+    */ 
     @Override
     public int register(User user) {
         user.setCreateTime(new Date());
-        user.setUpdateTime(new Date());
-        this.userDao.insert(user);
-        return 0;
+        return this.userDao.insert(user);
     }
 }

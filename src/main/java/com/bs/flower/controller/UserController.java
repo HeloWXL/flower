@@ -60,7 +60,7 @@ public class UserController {
     }
 
 
-    @ApiOperation(value = "推出登录")
+    @ApiOperation(value = "退出登录")
     @GetMapping("/logout")
     @ResponseBody
     public void removeStudentSession(HttpServletRequest request, HttpServletResponse response){

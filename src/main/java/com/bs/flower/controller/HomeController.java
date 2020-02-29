@@ -72,4 +72,25 @@ public class HomeController {
         model.addAttribute("product",this.productService.queryById(id));
         return "detail";
     }
+
+    /**
+     * @Description: 跳转登录
+     * @Date: 2020/2/28 12:17 AM
+     */
+    @ApiOperation("跳转登录页面")
+    @GetMapping("/login")
+    public String toLogin(){
+        return "/user/login";
+    }
+
+    /**
+     * @Description: 跳转注册
+     * @Date: 2020/2/28 12:17 AM
+     */
+    @ApiOperation("跳转登录页面")
+    @GetMapping("/register")
+    public String toRegister(){
+        return "/user/register";
+    }
+
 }

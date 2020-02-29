@@ -14,12 +14,16 @@
         <result property="desc" column="desc" jdbcType="VARCHAR"/>
         <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
         <result property="updateItme" column="update_itme" jdbcType="TIMESTAMP"/>
+        <result property="material" column="material" jdbcType="VARCHAR"/>
+        <result property="packing" column="packing" jdbcType="VARCHAR"/>
+        <result property="language" column="language" jdbcType="VARCHAR"/>
+        <result property="gift" column="gift" jdbcType="VARCHAR"/>
     </resultMap>
 
     <!--查询单个-->
     <select id="queryById" resultMap="ProductMap">
         select
-          product_id, product_name, primary_price, now_price, amout, path, classfy, color, descr, create_time, update_itme
+          product_id, product_name, primary_price, now_price, amout, path, classfy, color, descr, create_time, update_itme,material,packing,language,gift
         from flower.product
         where product_id = #{productId}
     </select>
@@ -27,7 +31,7 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="ProductMap">
         select
-          product_id, product_name, primary_price, now_price, amout, path, classfy, color, descr, create_time, update_itme
+          product_id, product_name, primary_price, now_price, amout, path, classfy, color, descr, create_time, update_itme,material,packing,language,gift
         from flower.product
         limit #{offset}, #{limit}
     </select>
@@ -35,7 +39,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="ProductMap">
         select
-          product_id, product_name, primary_price, now_price, amout, path, classfy, color, descr, create_time, update_itme
+          product_id, product_name, primary_price, now_price, amout, path, classfy, color, descr, create_time, update_itme,material,packing,language,gift
         from flower.product
         <where>
             <if test="productId != null">
@@ -74,10 +78,97 @@
         </where>
     </select>
 
-    <!--新增所有列-->
-    <insert id="insert" keyProperty="productId" useGeneratedKeys="true">
-        insert into flower.product(product_name, primary_price, now_price, amout, path, classfy, color, descr, create_time, update_itme)
-        values (#{productName}, #{primaryPrice}, #{nowPrice}, #{amout}, #{path}, #{classfy}, #{color}, #{desc}, #{createTime}, #{updateItme})
+    <!--添加-->
+    <insert id="insertSelective" parameterType="com.bs.flower.entity.Product" >
+        insert into product
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="productName != null" >
+                product_name,
+            </if>
+            <if test="primaryPrice != null" >
+                primary_price,
+            </if>
+            <if test="nowPrice != null" >
+                now_price,
+            </if>
+            <if test="amout != null" >
+                amout,
+            </if>
+            <if test="path != null" >
+                path,
+            </if>
+            <if test="classfy != null" >
+                classfy,
+            </if>
+            <if test="color != null" >
+                color,
+            </if>
+            <if test="descr != null" >
+                descr,
+            </if>
+            <if test="createTime != null" >
+                create_time,
+            </if>
+            <if test="updateItme != null" >
+                update_itme,
+            </if>
+            <if test="material != null" >
+                material,
+            </if>
+            <if test="packing != null" >
+                packing,
+            </if>
+            <if test="language != null" >
+                language,
+            </if>
+            <if test="gift != null" >
+                gift,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="productName != null" >
+                #{productName,jdbcType=VARCHAR},
+            </if>
+            <if test="primaryPrice != null" >
+                #{primaryPrice,jdbcType=DOUBLE},
+            </if>
+            <if test="nowPrice != null" >
+                #{nowPrice,jdbcType=DOUBLE},
+            </if>
+            <if test="amout != null" >
+                #{amout,jdbcType=INTEGER},
+            </if>
+            <if test="path != null" >
+                #{path,jdbcType=VARCHAR},
+            </if>
+            <if test="classfy != null" >
+                #{classfy,jdbcType=INTEGER},
+            </if>
+            <if test="color != null" >
+                #{color,jdbcType=VARCHAR},
+            </if>
+            <if test="descr != null" >
+                #{descr,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null" >
+                #{createTime,jdbcType=DATE},
+            </if>
+            <if test="updateItme != null" >
+                #{updateItme,jdbcType=DATE},
+            </if>
+            <if test="material != null" >
+                #{material,jdbcType=VARCHAR},
+            </if>
+            <if test="packing != null" >
+                #{packing,jdbcType=VARCHAR},
+            </if>
+            <if test="language != null" >
+                #{language,jdbcType=VARCHAR},
+            </if>
+            <if test="gift != null" >
+                #{gift,jdbcType=VARCHAR},
+            </if>
+        </trim>
     </insert>
 
     <!--通过主键修改数据-->
@@ -113,6 +204,18 @@
             </if>
             <if test="updateItme != null">
                 update_itme = #{updateItme},
+            </if>
+            <if test="material != null">
+                material = #{material},
+            </if>
+            <if test="packing != null">
+                packing = #{packing},
+            </if>
+            <if test="language != null">
+                language = #{language},
+            </if>
+            <if test="updateItme != null">
+                gift = #{gift},
             </if>
         </set>
         where product_id = #{productId}

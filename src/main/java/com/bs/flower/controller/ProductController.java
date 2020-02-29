@@ -50,15 +50,20 @@ public class ProductController {
         return this.productService.queryById(id);
     }
 
+    @ApiOperation("新增商品")
+    @PostMapping("insertProduct")
+    public int insertProduct(@RequestBody Product product) {
+        return this.productService.insert(product);
+    }
+
     /**
-    * @Description: 图片上传接口
+    * @Description: 更新商品图片
     * @Date: 2020/2/29 11:05 AM
     */ 
-    @ApiOperation(value = "上传到本地")
-    @PostMapping("/uploadToLocal")
-    @ResponseBody
+    @ApiOperation(value = "更新商品图片")
+    @PostMapping("/updateImage")
     public Map<String,Object> uploadToLocal(@RequestParam("file") MultipartFile file,
-                                            HttpServletResponse response) {
+                                            HttpServletResponse response,@RequestParam("id") int id) {
         Map<String,Object> result  = new HashMap<>();
         response.setContentType("text/html;charset=UTF-8");
         String fileName = file.getOriginalFilename();
@@ -77,6 +82,12 @@ public class ProductController {
             //群头像地址
             String imgPath = relativeDir + newName;
             file.transferTo(new File(picDir + imgPath));
+            //将图片保存在数据库
+            Product product = new Product();
+            product.setProductId(id);
+            product.setPath(imgPath);
+            productService.update(product);
+
             result.put("code", 200);
             result.put("msg", fileName);
             result.put("data", imgPath);

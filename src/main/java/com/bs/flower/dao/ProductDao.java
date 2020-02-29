@@ -58,4 +58,10 @@ public interface ProductDao extends BaseMapper<Product> {
      */
     int deleteById(Integer productId);
 
+    /**
+    * @Description: 添加可选
+    * @Date: 2020/2/29 11:15 AM
+    */ 
+    int insertSelective(Product product);
+
 }
