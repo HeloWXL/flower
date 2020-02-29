@@ -1,6 +1,7 @@
 package com.bs.flower.service.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.bs.flower.entity.Product;
 import com.bs.flower.entity.User;
 import com.bs.flower.dao.UserDao;
 import com.bs.flower.service.UserService;
@@ -100,4 +101,6 @@ public class UserServiceImpl implements UserService {
         user.setCreateTime(new Date());
         return this.userDao.insert(user);
     }
+
+
 }

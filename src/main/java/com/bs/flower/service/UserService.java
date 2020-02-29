@@ -1,5 +1,6 @@
 package com.bs.flower.service;
 
+import com.bs.flower.entity.Product;
 import com.bs.flower.entity.User;
 import java.util.List;
 
@@ -63,5 +64,7 @@ public interface UserService {
     * @Date: 2020/2/28 5:32 PM
     */ 
     int register(User user);
+
+
 
 }

@@ -37,7 +37,8 @@ public class HomeController {
     */
     @ApiOperation("跳转商铺")
     @GetMapping("/shop")
-    public String toShop(){
+    public String toShop(Model model){
+        model.addAttribute("productList",productService.getAllProduct());
         return "shop";
     }
 

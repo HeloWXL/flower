@@ -15,14 +15,12 @@
     <link href="${ctx}/res/css/index/style.css" rel="stylesheet">
     <script>
         var ctx = '${ctx}';
+        var user = '${USERSESSION}';
     </script>
 </head>
 <body>
-<!-- Start Header Area -->
 <header class="header-area">
-    <!-- main header start -->
     <div class="main-header d-none d-lg-block">
-        <!-- header top start -->
         <div class="header-top bdr-bottom">
             <div class="container">
                 <div class="row align-items-center">
@@ -34,14 +32,9 @@
                 </div>
             </div>
         </div>
-        <!-- header top end -->
-
-        <!-- header middle area start -->
         <div class="header-main-area sticky">
             <div class="container">
                 <div class="row align-items-center position-relative">
-
-                    <!-- start logo area -->
                     <div class="col-lg-3">
                         <div class="logo">
                             <a href="${ctx}/index">
@@ -49,9 +42,6 @@
                             </a>
                         </div>
                     </div>
-                    <!-- start logo area -->
-
-                    <!-- main menu area start -->
                     <div class="col-lg-6 position-static">
                         <div class="main-menu-area">
                             <div class="main-menu">
@@ -66,9 +56,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- main menu area end -->
-
-                    <!-- mini cart area start -->
                     <div class="col-lg-3">
                         <div class="header-configure-wrapper">
                             <div class="header-configure-area">
@@ -83,9 +70,14 @@
                                             <i class="lnr lnr-user"></i>
                                         </a>
                                         <ul class="dropdown-list">
-                                            <li><a href="${ctx}/login">登录</a></li>
-                                            <li><a href="${ctx}/register">注册</a></li>
-                                            <li><a href="#">我的账户</a></li>
+                                            <c:if test="${USERSESSION==''||USERSESSION==null}">　
+                                                <li><a href="${ctx}/login">登录</a></li>
+                                                <li><a href="${ctx}/register">注册</a></li>
+                                            </c:if>　
+                                            <c:if test="${USERSESSION!=''||USERSESSION!=null}">　
+                                                <li><a href="#">我的账户</a></li>
+                                                <li><a href="${ctx}/user/logout">退出登录</a></li>
+                                            </c:if>　
                                         </ul>
                                     </li>
                                     <li>

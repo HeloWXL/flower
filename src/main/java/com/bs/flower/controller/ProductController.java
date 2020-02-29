@@ -17,10 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.OutputStream;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * (Product)表控制层
@@ -114,7 +111,7 @@ public class ProductController {
     }
 
     @ApiOperation(value = "获取图片路径")
-    @RequestMapping(value = "/getLocalImg", method = RequestMethod.GET)
+    @GetMapping(value = "/getLocalImg")
     public void getLocalImg(HttpServletRequest request, HttpServletResponse response, @RequestParam("path") String path){
         try {
             File file = new File(ConfigUtil.getValue("productDir") + path);
@@ -131,4 +128,10 @@ public class ProductController {
         }
     }
 
+
+    @ApiOperation("获取所有的商品")
+    @GetMapping("getAllProduct")
+    public List<Product> getAllProduct() {
+        return this.productService.getAllProduct();
+    }
 }

@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="${ctx}/res/css/cart//style.css">
     <script>
         var ctx = '${ctx}';
+        var user = '${USERSESSION}';
+        var userId ='${USERSESSION.userId}';
     </script>
 </head>
 <body>
@@ -78,8 +80,12 @@
         crossorigin="anonymous"></script>
 <script>
     $(function () {
+        if(user==''||user==null) {
+            location.href = ctx+'/login';
+            return;
+        }
         //展示我的购物车
-        showMyCart(1);
+        showMyCart(userId);
     });
 
     /**

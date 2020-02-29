@@ -1,5 +1,6 @@
 package com.bs.flower.service.impl;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.bs.flower.entity.Product;
 import com.bs.flower.dao.ProductDao;
 import com.bs.flower.service.ProductService;
@@ -74,5 +75,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public boolean deleteById(Integer productId) {
         return this.productDao.deleteById(productId) > 0;
+    }
+
+
+    @Override
+    public List<Product> getAllProduct() {
+        return this.productDao.selectList(new EntityWrapper<Product>());
     }
 }

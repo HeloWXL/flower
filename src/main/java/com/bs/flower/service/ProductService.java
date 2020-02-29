@@ -52,4 +52,9 @@ public interface ProductService {
      */
     boolean deleteById(Integer productId);
 
+    /**
+     * @Description: 查询所有的
+     * @Date: 2020/2/29 9:57 PM
+     */
+    List<Product> getAllProduct();
 }
