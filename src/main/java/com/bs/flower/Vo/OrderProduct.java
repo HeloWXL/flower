@@ -20,6 +20,9 @@ public class OrderProduct {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date sendTime;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date receiveTime;
+
     private String productName;
 
     private String path;

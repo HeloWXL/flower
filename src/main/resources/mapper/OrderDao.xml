@@ -102,7 +102,7 @@
             <if test="productId != null">
                 product_id = #{productId},
             </if>
-            <if test="price != null">
+            <if test="price != 0.0">
                 price = #{price},
             </if>
             <if test="amout != null">

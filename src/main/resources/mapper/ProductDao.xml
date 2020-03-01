@@ -85,10 +85,10 @@
             <if test="productName != null" >
                 product_name,
             </if>
-            <if test="primaryPrice != null" >
+            <if test="primaryPrice != 0.0" >
                 primary_price,
             </if>
-            <if test="nowPrice != null" >
+            <if test="nowPrice != 0.0" >
                 now_price,
             </if>
             <if test="amout != null" >

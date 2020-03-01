@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -84,7 +85,7 @@ public interface OrderDao extends BaseMapper<Order> {
     */ 
     @Select("SELECT\n" +
             "\tp.path,p.product_name," +
-            "o.amout,o.price,o.create_time,o.send_time,o.order_id,o.status,o.receiver_name,o.receiver_phone,o.receiver_address\n" +
+            "o.amout,o.price,o.create_time,o.send_time,o.receive_time,o.order_id,o.status,o.receiver_name,o.receiver_phone,o.receiver_address\n" +
             "FROM\n" +
             "\tflower.order o,\n" +
             "\tflower.product p \n" +
@@ -94,11 +95,11 @@ public interface OrderDao extends BaseMapper<Order> {
             "\t")
     OrderProduct getOrderById(@Param("orderId") int orderId);
 
-    /**
-    * @Description: 收货
-    * @Date: 2020/3/2 12:54 AM
-    */ 
-    @Update("update flower.order o set o.status = 2 where o.order_id = #{orderId}")
-    int receipt(@Param("orderId") int orderId);
+//    /**
+//    * @Description: 收货
+//    * @Date: 2020/3/2 12:54 AM
+//    */
+//    @Update("update flower.order o set o.status = 2 ,o.receive_time = ${receiveTime} where o.order_id = #{orderId}")
+//    int receipt(@Param("orderId") int orderId,@Param("receiveTime") Date receiveTime);
 
 }

@@ -8,6 +8,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -45,9 +46,9 @@ public class OrderController {
     }
 
     @ApiOperation("收货")
-    @GetMapping("receipt")
-    public int receipt(@RequestParam("orderId") int orderId) {
-        return this.orderService.receipt(orderId);
+    @PostMapping("receipt")
+    public int receipt(@RequestParam("orderId") int orderId,@RequestParam("receiveTime") Date receiveTime) {
+        return this.orderService.receipt(orderId,receiveTime);
     }
 
 }

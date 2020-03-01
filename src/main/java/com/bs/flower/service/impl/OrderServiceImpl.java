@@ -6,9 +6,11 @@ import com.bs.flower.dao.CartDao;
 import com.bs.flower.entity.Order;
 import com.bs.flower.dao.OrderDao;
 import com.bs.flower.service.OrderService;
+import com.bs.flower.util.CommonUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -99,7 +101,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public int receipt(int orderId) {
-        return this.orderDao.receipt(orderId);
+    public int receipt(int orderId,Date receiveTime) {
+        Order order = new Order();
+        order.setOrderId(orderId);
+        order.setReceiveTime(receiveTime);
+        order.setStatus(2);
+        return this.orderDao.update(order);
     }
 }

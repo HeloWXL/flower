@@ -4,6 +4,7 @@ import com.bs.flower.Vo.OrderProduct;
 import com.bs.flower.entity.Order;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -64,5 +65,5 @@ public interface OrderService {
      * @Description: 收货
      * @Date: 2020/3/2 12:17 AM
      */
-    int receipt(int orderId);
+    int receipt(int orderId,Date receiveTime);
 }

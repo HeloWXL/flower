@@ -2,6 +2,7 @@ package com.bs.flower.entity;
 
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.enums.IdType;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.util.Date;
@@ -40,10 +41,10 @@ public class Order implements Serializable {
     private String receiverPhone;
     
     private String receiverAddress;
-    
+
     private Date createTime;
-    
+
     private Date sendTime;
-    
+
     private Date receiveTime;
 }

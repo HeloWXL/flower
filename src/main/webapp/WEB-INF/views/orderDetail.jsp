@@ -180,6 +180,12 @@
                                             <div> <fmt:formatDate value="${order.sendTime}" pattern="yyyy-MM-dd hh:mm:ss" /></div>
                                         </div>
                                     </c:if>
+                                    <c:if test="${not empty order.receiveTime}">
+                                        <div class="color-option" style="margin-bottom: 30px;">
+                                            <h4>收货时间 :</h4>
+                                            <div> <fmt:formatDate value="${order.receiveTime}" pattern="yyyy-MM-dd hh:mm:ss" /></div>
+                                        </div>
+                                    </c:if>
                                     <div class="color-option" style="margin-bottom: 30px;">
                                         <h4>状态 :</h4>
                                         <c:if test="${order.status==0}">
@@ -228,9 +234,10 @@
         $.ajax({
             url:ctx+'/order/receipt',
             data:{
-                orderId:orderId
+                orderId:orderId,
+                receiveTime:new Date()
             },
-            type:'get',
+            type:'post',
             dataType:'json',
             success:function (res) {
                 if(res==1){
