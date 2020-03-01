@@ -85,21 +85,20 @@
                                             <i class="lnr lnr-user"></i>
                                         </a>
                                         <ul class="dropdown-list">
-                                            <li><a href="#">login</a></li>
-                                            <li><a href="#">register</a></li>
-                                            <li><a href="#">my account</a></li>
+                                            <c:if test="${userId==''}">
+                                                <li><a href="${ctx}/login">登录</a></li>
+                                                <li><a href="${ctx}/register">注册</a></li>
+                                            </c:if>
+
+                                            <c:if test="${userId!=''}">
+                                                <li><a href="#">我的账户</a></li>
+                                                <li><a href="${ctx}/user/logout">退出登录</a></li>
+                                            </c:if>
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <i class="lnr lnr-heart"></i>
-                                            <div class="notification">0</div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="minicart-btn">
+                                        <a href="${ctx}/cart"  class="minicart-btn">
                                             <i class="lnr lnr-cart"></i>
-                                            <div class="notification">2</div>
                                         </a>
                                     </li>
                                 </ul>
@@ -114,38 +113,6 @@
         <!-- header middle area end -->
     </div>
     <!-- main header start -->
-
-    <!-- mobile header start -->
-    <div class="mobile-header d-lg-none d-md-block sticky">
-        <!--mobile header top start -->
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12">
-                    <div class="mobile-main-header">
-                        <div class="mobile-logo">
-                            <a href="${ctx}/index">
-                                <img src="${ctx}/res/img/logo/logo.png" alt="Brand Logo">
-                            </a>
-                        </div>
-                        <div class="mobile-menu-toggler">
-                            <div class="mini-cart-wrap">
-                                <a href="#">
-                                    <i class="lnr lnr-cart"></i>
-                                </a>
-                            </div>
-                            <div class="mobile-menu-btn">
-                                <div class="off-canvas-btn">
-                                    <i class="lnr lnr-menu"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- mobile header top start -->
-    </div>
-    <!-- mobile header end -->
 </header>
 <!-- end Header Area -->
 
@@ -211,27 +178,6 @@
                         </div>
                     </li>
                 </ul>
-            </div>
-
-            <!-- offcanvas widget area start -->
-            <div class="offcanvas-widget-area">
-                <div class="off-canvas-contact-widget">
-                    <ul>
-                        <li><i class="fa fa-mobile"></i>
-                            <a href="#">0123456789</a>
-                        </li>
-                        <li><i class="fa fa-envelope-o"></i>
-                            <a href="#">info@yourdomain.com</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="off-canvas-social-widget">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                    <a href="#"><i class="fa fa-youtube-play"></i></a>
-                </div>
             </div>
             <!-- offcanvas widget area end -->
         </div>
@@ -627,86 +573,6 @@
     </div>
 </div>
 <!-- offcanvas search form end -->
-
-<!-- offcanvas mini cart start -->
-<div class="offcanvas-minicart-wrapper">
-    <div class="minicart-inner">
-        <div class="offcanvas-overlay"></div>
-        <div class="minicart-inner-content">
-            <div class="minicart-close">
-                <i class="lnr lnr-cross"></i>
-            </div>
-            <div class="minicart-content-box">
-                <div class="minicart-item-wrapper">
-                    <ul>
-                        <li class="minicart-item">
-                            <div class="minicart-thumb">
-                                <a href="product-details.html">
-                                    <img src="${ctx}/res/img/cart/cart-1.jpg" alt="product">
-                                </a>
-                            </div>
-                            <div class="minicart-content">
-                                <h3 class="product-name">
-                                    <a href="product-details.html">Flowers bouquet pink for all flower lovers</a>
-                                </h3>
-                                <p>
-                                    <span class="cart-quantity">1 <strong>&times;</strong></span>
-                                    <span class="cart-price">$100.00</span>
-                                </p>
-                            </div>
-                            <button class="minicart-remove"><i class="lnr lnr-cross"></i></button>
-                        </li>
-                        <li class="minicart-item">
-                            <div class="minicart-thumb">
-                                <a href="product-details.html">
-                                    <img src="${ctx}/res/img/cart/cart-2.jpg" alt="product">
-                                </a>
-                            </div>
-                            <div class="minicart-content">
-                                <h3 class="product-name">
-                                    <a href="product-details.html">Jasmine flowers white for all flower lovers</a>
-                                </h3>
-                                <p>
-                                    <span class="cart-quantity">1 <strong>&times;</strong></span>
-                                    <span class="cart-price">$80.00</span>
-                                </p>
-                            </div>
-                            <button class="minicart-remove"><i class="lnr lnr-cross"></i></button>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="minicart-pricing-box">
-                    <ul>
-                        <li>
-                            <span>sub-total</span>
-                            <span><strong>$300.00</strong></span>
-                        </li>
-                        <li>
-                            <span>Eco Tax (-2.00)</span>
-                            <span><strong>$10.00</strong></span>
-                        </li>
-                        <li>
-                            <span>VAT (20%)</span>
-                            <span><strong>$60.00</strong></span>
-                        </li>
-                        <li class="total">
-                            <span>total</span>
-                            <span><strong>$370.00</strong></span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="minicart-button">
-                    <a href="#"><i class="fa fa-shopping-cart"></i> view cart</a>
-                    <a href="#"><i class="fa fa-share"></i> checkout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- offcanvas mini cart end -->
-
 <!-- Scroll to top start -->
 <div class="scroll-top not-visible">
     <i class="fa fa-angle-up"></i>

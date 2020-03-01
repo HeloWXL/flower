@@ -67,7 +67,7 @@
         <div class="row">
             <div class="col-sm-6 mb-3 mb-m-1 text-md-left"><a href="${ctx}/shop"><i class="fas fa-arrow-left mr-2"></i>
                 继续购物</a></div>
-            <div class="col-sm-6 text-md-right"><a href="#" class="btn btn-primary btn-lg pl-5 pr-5">结算</a></div>
+            <div class="col-sm-6 text-md-right"><a href="${ctx}/order/${userId}" class="btn btn-primary btn-lg pl-5 pr-5">结算</a></div>
         </div>
     </div>
 </section>

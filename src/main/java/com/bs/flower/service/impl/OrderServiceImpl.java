@@ -1,5 +1,7 @@
 package com.bs.flower.service.impl;
 
+import com.bs.flower.Vo.CartProductVo;
+import com.bs.flower.dao.CartDao;
 import com.bs.flower.entity.Order;
 import com.bs.flower.dao.OrderDao;
 import com.bs.flower.service.OrderService;
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * (Order)表服务实现类
@@ -18,6 +21,9 @@ import java.util.List;
 public class OrderServiceImpl implements OrderService {
     @Resource
     private OrderDao orderDao;
+    @Resource
+    private CartDao cartDao;
+
 
     /**
      * 通过ID查询单条数据
@@ -49,9 +55,17 @@ public class OrderServiceImpl implements OrderService {
      * @return 实例对象
      */
     @Override
-    public Order insert(Order order) {
-        this.orderDao.insert(order);
-        return order;
+    public int insert(Order order) {
+        List<CartProductVo> list = cartDao.getAllCartByUserId(order.getUserId());
+        for (CartProductVo c:list
+             ) {
+            order.setProductId(c.getProductId());
+            order.setOrderNo(UUID.randomUUID().toString());
+            order.setAmout(c.getAmout());
+            order.setPrice(c.getPrice());
+            this.orderDao.insert(order);
+        }
+        return  1;
     }
 
     /**

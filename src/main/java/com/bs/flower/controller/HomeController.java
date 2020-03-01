@@ -1,5 +1,6 @@
 package com.bs.flower.controller;
 
+import com.bs.flower.service.CartService;
 import com.bs.flower.service.ProductService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -8,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 
@@ -21,6 +23,11 @@ public class HomeController {
      */
     @Resource
     private ProductService productService;
+    /**
+     * 服务对象
+     */
+    @Resource
+    private CartService cartService;
 
     /**
      * @Description: 跳转到首页
@@ -53,8 +60,9 @@ public class HomeController {
      * @Date: 2020/2/28 12:17 AM
      */
     @ApiOperation("跳转订单")
-    @GetMapping("/order")
-    public String toOrder() {
+    @GetMapping("/order/{userId}")
+    public String toOrder(Model model, @PathVariable("userId") int userId) {
+        model.addAttribute("cartList",cartService.getAllCartByUserId(userId));
         return "order";
     }
 

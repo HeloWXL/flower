@@ -32,9 +32,9 @@ public interface OrderService {
      * 新增数据
      *
      * @param order 实例对象
-     * @return 实例对象
+     * @return int
      */
-    Order insert(Order order);
+    int insert(Order order);
 
     /**
      * 修改数据

@@ -207,7 +207,7 @@
 		var $this = $(this),
 			finalDate = $(this).data('countdown');
 		$this.countdown(finalDate, function (event) {
-			$this.html(event.strftime('<div class="single-countdown"><span class="single-countdown__time">%D</span><span class="single-countdown__text">Days</span></div><div class="single-countdown"><span class="single-countdown__time">%H</span><span class="single-countdown__text">Hours</span></div><div class="single-countdown"><span class="single-countdown__time">%M</span><span class="single-countdown__text">Mins</span></div><div class="single-countdown"><span class="single-countdown__time">%S</span><span class="single-countdown__text">Secs</span></div>'));
+			$this.html(event.strftime('<div class="single-countdown"><span class="single-countdown__time">%D</span><span class="single-countdown__text">天</span></div><div class="single-countdown"><span class="single-countdown__time">%H</span><span class="single-countdown__text">小时</span></div><div class="single-countdown"><span class="single-countdown__time">%M</span><span class="single-countdown__text">分钟</span></div><div class="single-countdown"><span class="single-countdown__time">%S</span><span class="single-countdown__text">秒</span></div>'));
 		});
 	});
 	/*------- Countdown Activation end -------*/

@@ -32,8 +32,8 @@ public class OrderController {
     }
 
     @ApiOperation("添加订单")
-    @PostMapping("insert")
-    public Order insert(@RequestBody Order order){
+    @PostMapping("insertOrder")
+    public int insert(@RequestBody Order order){
         return this.orderService.insert(order);
     }
 

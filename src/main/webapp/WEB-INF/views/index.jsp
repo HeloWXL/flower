@@ -71,14 +71,15 @@
                                             <i class="lnr lnr-user"></i>
                                         </a>
                                         <ul class="dropdown-list">
-                                            <c:if test="${USERSESSION==''||USERSESSION==null}">　
+
+                                            <c:if test="${userId==0}">
                                                 <li><a href="${ctx}/login">登录</a></li>
                                                 <li><a href="${ctx}/register">注册</a></li>
-                                            </c:if>　
-                                            <c:if test="${USERSESSION!=''||USERSESSION!=null}">　
+                                            </c:if>
+                                            <c:if test="${userId!=0}">
                                                 <li><a href="#">我的账户</a></li>
                                                 <li><a href="${ctx}/user/logout">退出登录</a></li>
-                                            </c:if>　
+                                            </c:if>
                                         </ul>
                                     </li>
                                     <li>

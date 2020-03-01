@@ -29,6 +29,8 @@ public class Order implements Serializable {
     private double price;
     
     private Integer amout;
+
+    private Integer status;
     
     private String receiverName;
     
