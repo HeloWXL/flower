@@ -8,6 +8,7 @@ $(function () {
         if (userId == 0) {
             alert('用户未登录');
             location.href = ctx + '/login';
+            return;
         }
         addCart(userId, productId, price)
     });

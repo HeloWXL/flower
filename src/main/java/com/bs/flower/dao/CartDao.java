@@ -7,7 +7,9 @@ import com.bs.flower.entity.Cart;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -70,5 +72,12 @@ public interface CartDao extends BaseMapper<Cart> {
             "where c.product_id = p.product_id\n" +
             "and c.user_id = #{userId}")
     List<CartProductVo> getAllCartByUserId(int userId);
+
+    /**
+    * @Description: 加入购物车 - 当商品已加入购物车
+    * @Date: 2020/3/2 12:54 AM
+    */
+    @Update("update cart set amout = #{count}  where product_id = #{productId} and user_id = #{userId}")
+    int addCart(@Param("productId") int productId, @Param("userId") int userId,@Param("count") int count);
 
 }

@@ -53,8 +53,13 @@ public class CartServiceImpl implements CartService {
      */
     @Override
     public int insert(Cart cart) {
-        cart.setCreateTime(new Date());
-        return this.cartDao.insert(cart);
+        List<Cart> cartList = this.cartDao.selectList(new EntityWrapper<Cart>().eq("user_id",cart.getUserId()).eq("product_id",cart.getProductId()));
+        if(cartList.size()>=1){
+            return this.cartDao.addCart(cart.getProductId(),cart.getUserId(),cartList.get(0).getAmout()+cart.getAmout());
+        }else{
+            cart.setCreateTime(new Date());
+            return this.cartDao.insert(cart);
+        }
     }
 
     /**

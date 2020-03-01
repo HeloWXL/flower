@@ -94,12 +94,4 @@ public interface OrderDao extends BaseMapper<Order> {
             "\tAND o.order_id = #{orderId} \n" +
             "\t")
     OrderProduct getOrderById(@Param("orderId") int orderId);
-
-//    /**
-//    * @Description: 收货
-//    * @Date: 2020/3/2 12:54 AM
-//    */
-//    @Update("update flower.order o set o.status = 2 ,o.receive_time = ${receiveTime} where o.order_id = #{orderId}")
-//    int receipt(@Param("orderId") int orderId,@Param("receiveTime") Date receiveTime);
-
 }
