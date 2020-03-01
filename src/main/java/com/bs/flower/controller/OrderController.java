@@ -44,4 +44,10 @@ public class OrderController {
         return this.orderService.getOrderByStatus(userId,status);
     }
 
+    @ApiOperation("收货")
+    @GetMapping("receipt")
+    public int receipt(@RequestParam("orderId") int orderId) {
+        return this.orderService.receipt(orderId);
+    }
+
 }

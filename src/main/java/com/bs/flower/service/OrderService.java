@@ -59,4 +59,10 @@ public interface OrderService {
      * @Date: 2020/3/1 10:53 PM
      */
     OrderProduct getOrderById(@Param("orderId") int orderId);
+
+    /**
+     * @Description: 收货
+     * @Date: 2020/3/2 12:17 AM
+     */
+    int receipt(int orderId);
 }

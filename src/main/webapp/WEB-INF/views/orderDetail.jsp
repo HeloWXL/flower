@@ -4,7 +4,7 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
-    <title>商品详情</title>
+    <title>订单详情</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -198,6 +198,12 @@
                                             <div class="pro-qty"><input type="text" value="${order.amout}" id="amout">
                                             </div>
                                         </div>
+                                        <c:if test="${order.status==1}">
+                                            <div class="action_link">
+                                                <a class="btn btn-cart2" order_id="${order.orderId}"
+                                                   style="color: #ffffff;" onclick="receipt(this)">确认收货</a>
+                                            </div>
+                                        </c:if>
                                     </div>
                                 </div>
                             </div>
@@ -217,26 +223,25 @@
             location.href = ctx + '/login';
         }
     });
-
-
-    function dateFormat(fmt, date) {
-        var ret;
-        var opt = {
-            "Y+": date.getFullYear().toString(),        // 年
-            "m+": (date.getMonth() + 1).toString(),     // 月
-            "d+": date.getDate().toString(),            // 日
-            "H+": date.getHours().toString(),           // 时
-            "M+": date.getMinutes().toString(),         // 分
-            "S+": date.getSeconds().toString()          // 秒
-            // 有其他格式化字符需求可以继续添加，必须转化成字符串
-        };
-        for (let k in opt) {
-            ret = new RegExp("(" + k + ")").exec(fmt);
-            if (ret) {
-                fmt = fmt.replace(ret[1], (ret[1].length == 1) ? (opt[k]) : (opt[k].padStart(ret[1].length, "0")))
-            };
-        };
-        return fmt;
+    function receipt(_this) {
+        var orderId = $(_this).attr("order_id");
+        $.ajax({
+            url:ctx+'/order/receipt',
+            data:{
+                orderId:orderId
+            },
+            type:'get',
+            dataType:'json',
+            success:function (res) {
+                if(res==1){
+                    alert("收货成功");
+                    location.href = ctx+'/info';
+                }else{
+                    alert("收货失败");
+                    location.reload()
+                }
+            }
+        })
     }
 </script>
 </html>

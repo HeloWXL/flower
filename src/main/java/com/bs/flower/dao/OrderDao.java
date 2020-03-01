@@ -7,6 +7,7 @@ import com.bs.flower.entity.Order;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -92,5 +93,12 @@ public interface OrderDao extends BaseMapper<Order> {
             "\tAND o.order_id = #{orderId} \n" +
             "\t")
     OrderProduct getOrderById(@Param("orderId") int orderId);
+
+    /**
+    * @Description: 收货
+    * @Date: 2020/3/2 12:54 AM
+    */ 
+    @Update("update flower.order o set o.status = 2 where o.order_id = #{orderId}")
+    int receipt(@Param("orderId") int orderId);
 
 }

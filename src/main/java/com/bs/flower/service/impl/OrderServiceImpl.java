@@ -97,4 +97,9 @@ public class OrderServiceImpl implements OrderService {
     public OrderProduct getOrderById(int orderId) {
         return this.orderDao.getOrderById(orderId);
     }
+
+    @Override
+    public int receipt(int orderId) {
+        return this.orderDao.receipt(orderId);
+    }
 }
