@@ -1,5 +1,6 @@
 package com.bs.flower.service;
 
+import com.bs.flower.Vo.OrderProduct;
 import com.bs.flower.entity.Order;
 import java.util.List;
 
@@ -52,4 +53,9 @@ public interface OrderService {
      */
     boolean deleteById(Integer orderId);
 
+    /**
+    * @Description: 根据状态查询用户的订单信息
+    * @Date: 2020/3/1 12:44 PM
+    */ 
+    List<OrderProduct> getOrderByStatus(int userId, int status);
 }

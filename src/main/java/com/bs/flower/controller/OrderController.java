@@ -1,5 +1,6 @@
 package com.bs.flower.controller;
 
+import com.bs.flower.Vo.OrderProduct;
 import com.bs.flower.entity.Order;
 import com.bs.flower.service.OrderService;
 import io.swagger.annotations.Api;
@@ -7,6 +8,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * (Order)表控制层
@@ -24,7 +26,6 @@ public class OrderController {
     @Resource
     private OrderService orderService;
 
-
     @ApiOperation("查询订单详情")
     @GetMapping("getOrderById")
     public Order getOrderById(@RequestParam("orderId") int orderId){
@@ -35,6 +36,12 @@ public class OrderController {
     @PostMapping("insertOrder")
     public int insert(@RequestBody Order order){
         return this.orderService.insert(order);
+    }
+
+    @ApiOperation("根据状态查询用户的订单信息")
+    @GetMapping("getOrderByStatus")
+    public List<OrderProduct> getOrderByStatus(@RequestParam("userId") int userId, @RequestParam("status") int status) {
+        return this.orderService.getOrderByStatus(userId,status);
     }
 
 }

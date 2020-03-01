@@ -1,10 +1,13 @@
 package com.bs.flower.dao;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.bs.flower.Vo.OrderProduct;
 import com.bs.flower.entity.Cart;
 import com.bs.flower.entity.Order;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+
 import java.util.List;
 
 /**
@@ -57,5 +60,20 @@ public interface OrderDao extends BaseMapper<Order> {
      * @return 影响行数
      */
     int deleteById(Integer orderId);
+
+    /**
+    * @Description: 根据状态查询用户的订单信息
+    * @Date: 2020/3/1 12:32 PM
+    */ 
+    @Select("SELECT\n" +
+            "\tp.path,p.product_name,o.amout,o.price,o.create_time,o.send_time,o.order_id\n" +
+            "FROM\n" +
+            "\tflower.order o,\n" +
+            "\tflower.product p \n" +
+            "WHERE\n" +
+            "\to.product_id = p.product_id \n" +
+            "\tAND o.status = #{status} \n" +
+            "\tAND o.user_id = #{userId}")
+    List<OrderProduct> getOrderByStatus(@Param("userId") int userId, @Param("status") int status);
 
 }

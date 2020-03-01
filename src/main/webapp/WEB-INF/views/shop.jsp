@@ -91,7 +91,7 @@
                                             </c:if>
 
                                             <c:if test="${userId!=0}">
-                                                <li><a href="#">我的账户</a></li>
+                                                <li><a href="${ctx}/info">我的账户</a></li>
                                                 <li><a href="${ctx}/user/logout">退出登录</a></li>
                                             </c:if>
                                         </ul>

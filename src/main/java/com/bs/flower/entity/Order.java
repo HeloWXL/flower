@@ -29,7 +29,10 @@ public class Order implements Serializable {
     private double price;
     
     private Integer amout;
-
+    
+    /**
+     * 0 未发货，1 已发货，2 已完成
+    */ 
     private Integer status;
     
     private String receiverName;

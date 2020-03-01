@@ -129,9 +129,9 @@
     </div>
 </div>
 </body>
-<script src="${ctx}/res/js/jquery-3.1.1.min.js"></script>
-<script src="${ctx}/res/js/order/plugins.js"></script>
-<script src="${ctx}/res/js/order/active.js"></script>
+<script src="${ctx}/res/js/jquery-3.1.1.min.js" type="application/javascript"></script>
+<script src="${ctx}/res/js/order/plugins.js" type="application/javascript"></script>
+<script src="${ctx}/res/js/order/active.js" type="application/javascript"></script>
 <script>
     $(function () {
         if(user==''||user==null) {
@@ -145,7 +145,6 @@
         for(var i = 1; i<rows.length; i++ ){
             var price = rows[i].cells[3].innerHTML;
             price = price.trim().slice(0,-3);
-
             sumPrice+=parseInt(price);
         }
         $("#sumPrice").html(sumPrice+"元")

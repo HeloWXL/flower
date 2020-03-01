@@ -1,6 +1,7 @@
 package com.bs.flower.service.impl;
 
 import com.bs.flower.Vo.CartProductVo;
+import com.bs.flower.Vo.OrderProduct;
 import com.bs.flower.dao.CartDao;
 import com.bs.flower.entity.Order;
 import com.bs.flower.dao.OrderDao;
@@ -63,6 +64,7 @@ public class OrderServiceImpl implements OrderService {
             order.setOrderNo(UUID.randomUUID().toString());
             order.setAmout(c.getAmout());
             order.setPrice(c.getPrice());
+            order.setStatus(0);
             this.orderDao.insert(order);
         }
         return  1;
@@ -89,5 +91,14 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public boolean deleteById(Integer orderId) {
         return this.orderDao.deleteById(orderId) > 0;
+    }
+
+    /**
+    * @Description: 根据状态查询用户的订单信息
+    * @Date: 2020/3/1 12:44 PM
+    */ 
+    @Override
+    public List<OrderProduct> getOrderByStatus(int userId, int status) {
+        return this.orderDao.getOrderByStatus(userId,status);
     }
 }

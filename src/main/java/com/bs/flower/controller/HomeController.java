@@ -107,4 +107,14 @@ public class HomeController {
         return "/user/register";
     }
 
+    /**
+     * @Description: 个人中心
+     * @Date: 2020/2/28 12:17 AM
+     */
+    @ApiOperation("跳转个人中心")
+    @GetMapping("/info")
+    public String toInfo() {
+        return "/user/info";
+    }
+
 }
