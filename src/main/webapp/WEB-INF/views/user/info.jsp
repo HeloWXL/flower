@@ -68,13 +68,12 @@
                                             <i class="lnr lnr-user"></i>
                                         </a>
                                         <ul class="dropdown-list">
-                                            <c:if test="${userId==''}">
+                                            <c:if test="${empty USERSESSION}">
                                                 <li><a href="${ctx}/login">登录</a></li>
                                                 <li><a href="${ctx}/register">注册</a></li>
                                             </c:if>
-
-                                            <c:if test="${userId!=''}">
-                                                <li><a href="#">我的账户</a></li>
+                                            <c:if test="${not empty USERSESSION}">
+                                                <li><a href="${ctx}/info">我的账户</a></li>
                                                 <li><a href="${ctx}/user/logout">退出登录</a></li>
                                             </c:if>
                                         </ul>
@@ -150,6 +149,9 @@
                             </th>
                             <th>
                                 状态
+                            </th>
+                            <th>
+                                操作
                             </th>
                         </tr>
                         </thead>
@@ -298,6 +300,9 @@
                         '                                </td>\n' +
                         '                                <td style="vertical-align: middle;">\n' +
                         '                                    '+str+'\n' +
+                        '                                </td>\n' +
+                        '                                <td style="vertical-align: middle;">\n' +
+                        '                                    <a href="${ctx}/orderDetail/'+order.orderId+'">详情</a>\n' +
                         '                                </td>\n' +
                         '                            </tr>');
                     $("#tab tbody").append($node);

@@ -2,6 +2,8 @@ package com.bs.flower.service;
 
 import com.bs.flower.Vo.OrderProduct;
 import com.bs.flower.entity.Order;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 /**
@@ -38,14 +40,6 @@ public interface OrderService {
     int insert(Order order);
 
     /**
-     * 修改数据
-     *
-     * @param order 实例对象
-     * @return 实例对象
-     */
-    Order update(Order order);
-
-    /**
      * 通过主键删除数据
      *
      * @param orderId 主键
@@ -58,4 +52,11 @@ public interface OrderService {
     * @Date: 2020/3/1 12:44 PM
     */ 
     List<OrderProduct> getOrderByStatus(int userId, int status);
+
+
+    /**
+     * @Description: 根据ID查询订单详情
+     * @Date: 2020/3/1 10:53 PM
+     */
+    OrderProduct getOrderById(@Param("orderId") int orderId);
 }

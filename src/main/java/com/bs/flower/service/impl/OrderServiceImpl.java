@@ -66,21 +66,12 @@ public class OrderServiceImpl implements OrderService {
             order.setPrice(c.getPrice());
             order.setStatus(0);
             this.orderDao.insert(order);
+            //删除用户购物车信息
+            this.cartDao.deleteById(c.getCartId());
         }
         return  1;
     }
 
-    /**
-     * 修改数据
-     *
-     * @param order 实例对象
-     * @return 实例对象
-     */
-    @Override
-    public Order update(Order order) {
-        this.orderDao.update(order);
-        return this.queryById(order.getOrderId());
-    }
 
     /**
      * 通过主键删除数据
@@ -100,5 +91,10 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public List<OrderProduct> getOrderByStatus(int userId, int status) {
         return this.orderDao.getOrderByStatus(userId,status);
+    }
+
+    @Override
+    public OrderProduct getOrderById(int orderId) {
+        return this.orderDao.getOrderById(orderId);
     }
 }

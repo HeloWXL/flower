@@ -14,8 +14,6 @@ public class OrderProduct {
 
     private Integer amout;
 
-    private Integer status;
-
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date createTime;
 
@@ -25,4 +23,15 @@ public class OrderProduct {
     private String productName;
 
     private String path;
+
+    /**
+     * 0 未发货，1 已发货，2 已完成
+     */
+    private Integer status;
+
+    private String receiverName;
+
+    private String receiverPhone;
+
+    private String receiverAddress;
 }

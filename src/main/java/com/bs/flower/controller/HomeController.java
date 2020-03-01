@@ -1,6 +1,7 @@
 package com.bs.flower.controller;
 
 import com.bs.flower.service.CartService;
+import com.bs.flower.service.OrderService;
 import com.bs.flower.service.ProductService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -28,6 +29,12 @@ public class HomeController {
      */
     @Resource
     private CartService cartService;
+
+    /**
+     * 服务对象
+     */
+    @Resource
+    private OrderService orderService;
 
     /**
      * @Description: 跳转到首页
@@ -115,6 +122,18 @@ public class HomeController {
     @GetMapping("/info")
     public String toInfo() {
         return "/user/info";
+    }
+
+
+    /**
+     * @Description: 订单详情
+     * @Date: 2020/2/28 12:17 AM
+     */
+    @ApiOperation("跳转订单详情")
+    @GetMapping("/orderDetail/{orderId}")
+    public String toOrderDetail(Model model,@PathVariable("orderId") Integer orderId) {
+        model.addAttribute("order",orderService.getOrderById(orderId));
+        return "/orderDetail";
     }
 
 }

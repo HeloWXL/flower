@@ -76,4 +76,21 @@ public interface OrderDao extends BaseMapper<Order> {
             "\tAND o.user_id = #{userId}")
     List<OrderProduct> getOrderByStatus(@Param("userId") int userId, @Param("status") int status);
 
+
+    /**
+    * @Description: 查询订单详情
+    * @Date: 2020/3/1 10:52 PM
+    */ 
+    @Select("SELECT\n" +
+            "\tp.path,p.product_name," +
+            "o.amout,o.price,o.create_time,o.send_time,o.order_id,o.status,o.receiver_name,o.receiver_phone,o.receiver_address\n" +
+            "FROM\n" +
+            "\tflower.order o,\n" +
+            "\tflower.product p \n" +
+            "WHERE\n" +
+            "\to.product_id = p.product_id \n" +
+            "\tAND o.order_id = #{orderId} \n" +
+            "\t")
+    OrderProduct getOrderById(@Param("orderId") int orderId);
+
 }

@@ -69,7 +69,7 @@ public class UserController {
         request.getSession().removeAttribute(USER);
         if ( request.getSession().getAttribute(USER) == null) {
             try {
-                response.sendRedirect("/flower/login");
+                response.sendRedirect("/flower/index");
             } catch (IOException e) {
                 e.printStackTrace();
             }
