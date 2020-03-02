@@ -157,7 +157,6 @@
                                         <h4>收货人 :</h4>
                                         <div>${order.receiverName}</div>
                                     </div>
-
                                     <div class="color-option" style="margin-bottom: 30px;">
                                         <h4>收货人手机号码 :</h4>
                                         <div>${order.receiverName}</div>
@@ -167,8 +166,17 @@
                                         <div>${order.receiverAddress}</div>
                                     </div>
                                     <div class="color-option" style="margin-bottom: 30px;">
-                                        <h4>总价 :</h4>
+                                        <h4>数量 :</h4>
+                                        <div>${order.amout}</div>
+                                    </div>
+                                    <div class="color-option" style="margin-bottom: 30px;">
+                                        <h4>单价 :</h4>
                                         <div>${order.price}</div>
+                                    </div>
+                                    <div class="color-option" style="margin-bottom: 30px;">
+                                        <h4>总价 :</h4>
+                                        <c:set var="sum" value="${order.price*order.amout}"></c:set>
+                                        <div>${sum}</div>
                                     </div>
                                     <div class="color-option" style="margin-bottom: 30px;">
                                         <h4>下单时间 :</h4>

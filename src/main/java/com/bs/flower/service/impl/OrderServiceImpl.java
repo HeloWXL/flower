@@ -65,7 +65,7 @@ public class OrderServiceImpl implements OrderService {
             order.setProductId(c.getProductId());
             order.setOrderNo(UUID.randomUUID().toString());
             order.setAmout(c.getAmout());
-            order.setPrice(c.getPrice());
+            order.setPrice(c.getNowPrice());
             order.setStatus(0);
             this.orderDao.insert(order);
             //删除用户购物车信息

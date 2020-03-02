@@ -65,7 +65,7 @@
                             ${product.amout}
                     </td>
                     <td align="center">
-                            ${product.price}元
+                            ${product.nowPrice}元
                     </td>
                 </tr>
             </c:forEach>
@@ -145,7 +145,8 @@
         for(var i = 1; i<rows.length; i++ ){
             var price = rows[i].cells[3].innerHTML;
             price = price.trim().slice(0,-3);
-            sumPrice+=parseInt(price);
+            var count = rows[i].cells[2].innerHTML;
+            sumPrice+=parseInt(price)*count;
         }
         $("#sumPrice").html(sumPrice+"元")
 

@@ -13,6 +13,8 @@ public class CartProductVo {
 
     private double price;
 
+    private double nowPrice;
+
     private Date createTime;
 
     private Integer productId;

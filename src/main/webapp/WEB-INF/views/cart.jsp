@@ -59,7 +59,7 @@
                 </table>
                 <div class="float-right text-right" id="sum">
                     <h4>总价:</h4>
-                    <h1>1800元</h1>
+                    <h1>0元</h1>
                     <p>(不包括运费)</p>
                 </div>
             </div>
@@ -75,9 +75,6 @@
 <script src="${ctx}/res/js/jquery-3.1.1.min.js"></script>
 <script src="${ctx}/res/layui/layui.js"></script>
 <script src="${ctx}/res/bootstrap/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
-        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
-        crossorigin="anonymous"></script>
 <script>
     $(function () {
         if(user==''||user==null) {
@@ -93,9 +90,9 @@
            var cartId = $(this).attr("cart_id");
            var _this = this;
             deleteCartById(cartId,_this)
-        })
+        });
     });
-    
+
     function deleteCartById(id,_this) {
         $.ajax({
             url:ctx+'/cart/deleteCartId',
@@ -113,6 +110,7 @@
             }
         })
     }
+
     /**
      * 显示我的购物车
      * @param userId
@@ -142,7 +140,7 @@
                         '                                </div>\n' +
                         '                            </div>\n' +
                         '                        </td>\n' +
-                        '                        <td data-th="Price" class="price" style="vertical-align: middle;">' + product.price + '元</td>\n' +
+                        '                        <td data-th="Price" class="price" style="vertical-align: middle;">' + product.nowPrice + '元</td>\n' +
                         '                        <td data-th="Quantity" style="vertical-align: middle;">\n' +
                         '                            <input type="number" class="form-control text-center" value="'+product.amout+'">\n' +
                         '                        </td>\n' +
@@ -154,6 +152,19 @@
                         '                    </tr>')
                     $("#productList").append($node);
                 })
+
+                //等待购物车加载完成计算购物车商品价格
+                var sumPrice = 0;
+                var tb = document.getElementById('cart');
+                var rows = tb.rows;
+                for(var i = 1; i<rows.length; i++ ){
+                    var price = rows[i].cells[1].innerHTML;
+                    price = price.trim().slice(0,-1);
+                    var amout = rows[i].cells[2];
+                    var $amout = $(amout);
+                    sumPrice+=parseInt(price)*$amout.children().val();
+                }
+                $("#sum h1").html(sumPrice+"元")
             }
         })
     }
