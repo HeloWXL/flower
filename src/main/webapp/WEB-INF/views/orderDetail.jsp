@@ -175,7 +175,7 @@
                                     </div>
                                     <div class="color-option" style="margin-bottom: 30px;">
                                         <h4>总价 :</h4>
-                                        <c:set var="sum" value="${order.price*order.amout}"></c:set>
+                                            <c:set var="sum" value="${order.price*order.amout}"></c:set>
                                         <div>${sum}</div>
                                     </div>
                                     <div class="color-option" style="margin-bottom: 30px;">

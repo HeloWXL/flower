@@ -59,7 +59,7 @@ public interface CartService {
     * @Description: 清空当前用户的购物车
     * @params: 
     * @return: 
-    * @Author: wangxianlin
+    * @Author:
     * @Date: 2020/2/29 1:37 PM
     */ 
     int deleteAllCart(Integer userId);
