@@ -50,7 +50,7 @@
                                 <!-- main menu navbar start -->
                                 <nav class="desktop-menu">
                                     <ul>
-                                        <li><a href="${ctx}/index">首页</a></li>
+                                        <li><a href="${ctx}/">首页</a></li>
                                         <li><a href="${ctx}/shop">商铺</a></li>
                                     </ul>
                                 </nav>

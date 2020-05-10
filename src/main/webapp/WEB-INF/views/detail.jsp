@@ -197,7 +197,7 @@
                         <nav aria-label="breadcrumb">
                             <h1>详情</h1>
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="${ctx}/index"><i class="fa fa-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="${ctx}/"><i class="fa fa-home"></i></a></li>
                                 <li class="breadcrumb-item active" aria-current="page">详情</li>
                             </ul>
                         </nav>
@@ -588,8 +588,6 @@
 
     $(function () {
         toastr.options.positionClass = 'toast-top-right';
-
-
     });
 
     function addCart(_this) {

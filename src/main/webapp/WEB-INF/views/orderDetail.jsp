@@ -62,7 +62,7 @@
                                 <!-- main menu navbar start -->
                                 <nav class="desktop-menu">
                                     <ul>
-                                        <li><a href="${ctx}/index">首页</a></li>
+                                        <li><a href="${ctx}/">首页</a></li>
                                         <li><a href="${ctx}/shop">店铺</a></li>
                                     </ul>
                                 </nav>
@@ -234,11 +234,10 @@
 <script src="${ctx}/res/toastr/toastr.min.js" type="application/javascript"></script>
 
 <script>
+
     $(function () {
-        if (userId == 0) {
-            alert("用户未登录");
-            location.href = ctx + '/login';
-        }
+        // 初始化弹窗
+        toastr.options.positionClass = 'toast-top-right';
     });
     function receipt(_this) {
         var orderId = $(_this).attr("order_id");
@@ -252,11 +251,11 @@
             dataType:'json',
             success:function (res) {
                 if(res==1){
-                    alert("收货成功");
-                    location.href = ctx+'/info';
+                    toastr.success("收货成功");
+                    setTimeout("location.href='/flower/info'", 1500);
                 }else{
-                    alert("收货失败");
-                    location.reload()
+                    toastr.error("收货失败");
+                    setTimeout("location.reload()", 1500);
                 }
             }
         })

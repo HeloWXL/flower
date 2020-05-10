@@ -6182,3 +6182,8 @@ only screen and (max-width: 767.98px) {
 }
 
 /*-------- footer bottom area end --------*/
+
+
+.list-group a{
+    cursor: pointer;
+}

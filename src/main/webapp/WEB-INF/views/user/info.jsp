@@ -37,7 +37,7 @@
                             <div class="main-menu">
                                 <nav class="desktop-menu">
                                     <ul>
-                                        <li><a href="${ctx}/index">首页</a></li>
+                                        <li><a href="${ctx}/">首页</a></li>
                                         <li><a href="${ctx}/shop">店铺</a></li>
                                     </ul>
                                 </nav>
@@ -96,7 +96,7 @@
                         <nav aria-label="breadcrumb">
                             <h1>个人中心</h1>
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="${ctx}/index"><i class="fa fa-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="${ctx}/"><i class="fa fa-home"></i></a></li>
                                 <li class="breadcrumb-item active" aria-current="page">个人中心</li>
                             </ul>
                         </nav>
@@ -151,7 +151,7 @@
                             <a id="info" class="list-group-item active" style="color: #ffffff">个人信息</a>
                             <a id="noShipped" class="list-group-item">未发货</a>
                             <a id="shipped" class="list-group-item">已发货</a>
-                            <a  class="list-group-item">已完成订单</a>
+                            <a  id="completeOrder" class="list-group-item" >已完成订单</a>
                         </div>
                     </div>
                     <div class="col-md-10 column" id="tab" style="display: none">

@@ -137,10 +137,10 @@
 
 <script>
     $(function () {
-        if(user==''||user==null) {
-            location.href = ctx+'/login';
-            return;
-        }
+
+        // 初始化弹窗
+        toastr.options.positionClass = 'toast-top-right';
+
         //获取购物车商品的总价格
         var sumPrice = 0;
         var tb = document.getElementById('tab');
@@ -159,17 +159,17 @@
             //姓名
             var username = $("#first_name").val();
             if(username==''||username==null){
-                alert("收货人姓名不能为空");
+                toastr.error("收货人姓名不能为空");
                 return;
             }
             var phone = $("#phone_number").val();
             if(phone==''||phone==null){
-                alert("收货人手机号不能为空");
+                toastr.error("收货人手机号不能为空");
                 return;
             }
             var address = $("#street_address").val();
             if(address==''||address==null){
-                alert("收货人地址不能为空");
+                toastr.error("收货人地址不能为空");
                 return;
             }
             var order = {
@@ -197,11 +197,11 @@
             contentType: 'application/json; charset=utf-8',
             success:function (res) {
                 if (res == 1) {
-                    alert('下单成功');
-                    location.href=ctx+"/shop";
+                    toastr.success("下单成功",{timeOut: 1500});
+                    setTimeout("location.href="+ctx+"'/shop'", 1500);
                 } else {
-                    alert('下单失败');
-                    location.href=ctx+"/cart";
+                    toastr.success("下单失败",{timeOut: 1500});
+                    setTimeout("location.href="+ctx+"'/cart'", 1500);
                 }
             }
         })

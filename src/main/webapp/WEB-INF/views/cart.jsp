@@ -26,7 +26,7 @@
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse pull-xs-right justify-content-end" id="navbar-1">
                 <ul class="navbar-nav mt-2 mt-md-0">
-                    <li class="nav-item "><a class="nav-link" href="${ctx}/index">首页<span
+                    <li class="nav-item "><a class="nav-link" href="${ctx}/">首页<span
                             class="sr-only">(current)</span></a></li>
                     <li class="nav-item">
                         <a class="nav-link" href="${ctx}/shop">商铺</a>
@@ -82,10 +82,6 @@
     $(function () {
         // 初始化弹窗
         toastr.options.positionClass = 'toast-top-right';
-        if(user==''||user==null) {
-            location.href = ctx+'/login';
-            return;
-        }
         //展示我的购物车
         showMyCart(userId);
         //动态获取删除按钮，并删除购物车
@@ -108,7 +104,7 @@
                 if(res==true){
                     $(_this).closest('tr').remove();
                 }else{
-                    alert("服务器内部错误");
+                    toastr.error("服务器内部错误");
                 }
             }
         })

@@ -171,7 +171,7 @@
                 <!-- mobile menu navigation start -->
                 <nav>
                     <ul class="mobile-menu">
-                        <li><a href="${ctx}/index">首页</a></li>
+                        <li><a href="${ctx}/">首页</a></li>
                         <li><a href="${ctx}/shop">我的商铺</a></li>
                     </ul>
                 </nav>
