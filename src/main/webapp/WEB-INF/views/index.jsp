@@ -502,18 +502,6 @@
             </div>
         </div>
     </section>
-    <!-- trending product area end -->
-
-    <!-- Instagram Feed Area Start -->
-    <div class="instagram-feed-area">
-        <div class="instagram-feed-thumb">
-            <div id="instafeed" class="instagram-carousel" data-userid="6666969077"
-                 data-accesstoken="6666969077.1677ed0.d325f406d94c4dfab939137c5c2cc6c2">
-            </div>
-        </div>
-    </div>
-    <!-- Instagram Feed Area End -->
-
 </main>
 <!-- main wrapper end -->
 
@@ -718,6 +706,7 @@
 </div>
 <!-- Scroll to Top End -->
 </body>
+<script src="${ctx}/res/js/jquery-2.1.4.js" type="application/javascript"></script>
 <script src="${ctx}/res/toastr/toastr.min.js" type="application/javascript"></script>
 <script src="${ctx}/res/js/index/vendor.js" type="application/javascript"></script>
 <script src="${ctx}/res/js/index/active.js" type="application/javascript"></script>

@@ -130,7 +130,7 @@
     </div>
 </div>
 </body>
-<script src="${ctx}/res/js/jquery-3.1.1.min.js" type="application/javascript"></script>
+<script src="${ctx}/res/js/jquery-2.1.4.js" type="application/javascript"></script>
 <script src="${ctx}/res/js/order/plugins.js" type="application/javascript"></script>
 <script src="${ctx}/res/js/order/active.js" type="application/javascript"></script>
 <script src="${ctx}/res/toastr/toastr.min.js" type="application/javascript"></script>

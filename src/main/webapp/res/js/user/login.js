@@ -1,3 +1,10 @@
+
+$(function () {
+    // 初始化弹窗
+    toastr.options.positionClass = 'toast-top-right';
+
+});
+
 /**
  * 点击登录
  */
@@ -15,12 +22,12 @@ $('#login').click(function (e) {
  */
 function login(username,password) {
     if(username==""||username==null){
-        alert("用户名不能为空");
+        toastr.error("用户名不能为空",{timeOut: 1500});
         return ;
     }
 
     if(password==""||password==null){
-        alert("密码不能为空");
+        toastr.error("密码不能为空",{timeOut: 1500});
         return ;
     }
     $.ajax({
@@ -33,9 +40,11 @@ function login(username,password) {
         dataType:'json',
         success:function (res) {
             if(res==true){
-                location.href=ctx+'/index';
+                toastr.success("登录成功",{timeOut: 1500});
+                setTimeout("location.href='/index'", 1500);
+                location.href=ctx+'/';
             }else{
-                alert("用户名或密码错误");
+                toastr.error("用户名或密码错误");
                 $("#username").val('');
                 $("#password").val('');
             }

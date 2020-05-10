@@ -231,9 +231,8 @@
 <div class="scroll-top not-visible">
     <i class="fa fa-angle-up"></i>
 </div>
-
 </body>
-<script src="${ctx}/res/js/jquery-3.1.1.min.js" type="application/javascript"></script>
+<script src="${ctx}/res/js/jquery-2.1.4.js" type="application/javascript"></script>
 <script>
     //个人中心
     $("#info").click(function () {

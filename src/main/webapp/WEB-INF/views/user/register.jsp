@@ -14,7 +14,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="${ctx}/res/css/user/style.css" rel='stylesheet' type='text/css' />
-    <script type="text/javascript" src="${ctx}/res/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="${ctx}/res/js/jquery-2.1.4.js"></script>
     <link rel="shortcut icon" href="${ctx}/res/img/logo.ico" type="image/x-icon"/>
     <script>
         var ctx = '${ctx}';
@@ -43,5 +43,6 @@
     <div class="signin"><input type="submit" value="注册" id="register"></div>
 </div>
 </body>
+<script src="${ctx}/res/js/jquery-2.1.4.js" type="application/javascript"></script>
 <script type="text/javascript" src="${ctx}/res/js/user/register.js"></script>
 </html>

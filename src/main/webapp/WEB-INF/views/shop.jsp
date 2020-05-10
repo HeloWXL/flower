@@ -599,7 +599,7 @@
 </div>
 <!-- Scroll to Top End -->
 </body>
-<script type="text/javascript" src="${ctx}/res/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="${ctx}/res/js/jquery-2.1.4.js"></script>
 <script src="${ctx}/res/js/shop/shop.js" type="text/javascript"></script>
 <script src="${ctx}/res/js/index/vendor.js" type="text/javascript"></script>
 <script src="${ctx}/res/js/index/active.js" type="text/javascript"></script>

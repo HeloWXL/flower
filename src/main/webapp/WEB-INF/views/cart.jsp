@@ -73,7 +73,7 @@
     </div>
 </section>
 </body>
-<script src="${ctx}/res/js/jquery-3.1.1.min.js"></script>
+<script src="${ctx}/res/js/jquery-2.1.4.js" type="application/javascript"></script>
 <script src="${ctx}/res/layui/layui.js"></script>
 <script src="${ctx}/res/bootstrap/js/bootstrap.min.js"></script>
 <script src="${ctx}/res/toastr/toastr.min.js" type="application/javascript"></script>

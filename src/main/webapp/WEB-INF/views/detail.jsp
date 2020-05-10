@@ -579,7 +579,7 @@
 </div>
 <!-- Scroll to Top End -->
 </body>
-<script src="${ctx}/res/js/jquery-3.1.1.min.js"></script>
+<script src="${ctx}/res/js/jquery-2.1.4.js"></script>
 <script src="${ctx}/res/js/index/vendor.js"></script>
 <script src="${ctx}/res/js/index/active.js"></script>
 <script src="${ctx}/res/toastr/toastr.min.js" type="application/javascript"></script>
@@ -594,7 +594,7 @@
 
     function addCart(_this) {
         if (userId == 0) {
-            alert("用户未登录");
+            toastr.error("用户未登录");
             location.href = ctx + '/login';
         }
         var productId = $(_this).attr("product_id");
@@ -626,9 +626,9 @@
             contentType: 'application/json; charset=utf-8',
             success: function (res) {
                 if (res == 1) {
-                    alert('加入购物车成功');
+                    toastr.success('加入购物车成功');
                 } else {
-                    alert('加入购物车失败');
+                    toastr.error('加入购物车失败');
                 }
             }
         })
