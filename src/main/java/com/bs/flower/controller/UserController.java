@@ -19,7 +19,7 @@ import java.io.IOException;
  * @author makejava
  * @since 2020-02-27 22:13:36
  */
-@Api("用户接口")
+@Api(tags = "用户接口")
 @RestController
 @RequestMapping("user")
 public class UserController {
@@ -41,7 +41,7 @@ public class UserController {
         return this.userService.queryById(id);
     }
 
-    @ApiOperation("登录验证")
+    @ApiOperation(value = "登录验证")
     @PostMapping("checkLogin")
     @ResponseBody
     public Boolean checkLogin(@RequestParam("userName") String userName, @RequestParam("password") String password, HttpSession session){
@@ -55,7 +55,7 @@ public class UserController {
     }
 
 
-    @ApiOperation("用户注册")
+    @ApiOperation(value = "用户注册")
     @PostMapping("register")
     public int register(@RequestBody User user){
         return userService.register(user);

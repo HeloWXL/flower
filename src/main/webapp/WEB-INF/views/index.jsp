@@ -13,10 +13,11 @@
           rel="stylesheet">
     <link href="${ctx}/res/css/index/vendor.css" rel="stylesheet">
     <link href="${ctx}/res/css/index/style.css" rel="stylesheet">
+    <link href="${ctx}/res/toastr/toastr.min.css" rel="stylesheet">
     <script>
         var ctx = '${ctx}';
         var user = '${USERSESSION}';
-        var userId ='${USERSESSION.userId}';
+        var userId = '${USERSESSION.userId}';
     </script>
 </head>
 <body>
@@ -157,9 +158,18 @@
                 <!-- mobile menu navigation start -->
                 <nav>
                     <ul class="mobile-menu">
-                        <li><a href="${ctx}/index">Home</a></li>
-                        <li><a href="${ctx}/shop">Shop</a></li>
-                        <li><a href="product-details.html">Product Details</a></li>
+                        <li><a href="${ctx}/index">首页</a></li>
+                        <li><a href="${ctx}/shop">商铺</a></li>
+                        <li><a href="${ctx}/cart">购物车</a></li>
+                        <li>
+                        <c:if test="${empty USERSESSION}">
+                        <li><a href="${ctx}/login">登录</a></li>
+                        <li><a href="${ctx}/register">注册</a></li>
+                        </c:if>
+                        <c:if test="${not empty USERSESSION}">
+                            <li><a href="${ctx}/info">我的账户</a></li>
+                            <li><a href="${ctx}/user/logout">退出登录</a></li>
+                        </c:if>
                     </ul>
                 </nav>
                 <!-- mobile menu navigation end -->
@@ -374,7 +384,7 @@
                                             data-placement="left"
                                             title="查看" productId="${product.productId}"><i
                                             class="lnr lnr-magnifier"></i></span></a>
-                                    <a  data-placement="left" title="加入购物车"
+                                    <a data-placement="left" title="加入购物车"
                                        productId="${product.productId}"><i
                                             class="lnr lnr-cart"></i></a>
                                 </div>
@@ -469,9 +479,10 @@
                                     </div>
                                     <div class="button-group">
                                         <a data-toggle="modal" data-target="#quick_view"><span
-                                                data-toggle="tooltip" data-placement="left" title="查看" productId="${b_product.productId}"><i
+                                                data-toggle="tooltip" data-placement="left" title="查看"
+                                                productId="${b_product.productId}"><i
                                                 class="lnr lnr-magnifier"></i></span></a>
-                                        <a  data-placement="left" title="加入购物车" productid="${b_product.productId}"><i
+                                        <a data-placement="left" title="加入购物车" productid="${b_product.productId}"><i
                                                 class="lnr lnr-cart"></i></a>
                                     </div>
                                 </figure>
@@ -707,7 +718,7 @@
 </div>
 <!-- Scroll to Top End -->
 </body>
-
+<script src="${ctx}/res/toastr/toastr.min.js" type="application/javascript"></script>
 <script src="${ctx}/res/js/index/vendor.js" type="application/javascript"></script>
 <script src="${ctx}/res/js/index/active.js" type="application/javascript"></script>
 <script src="${ctx}/res/js/index/index.js" type="application/javascript"></script>

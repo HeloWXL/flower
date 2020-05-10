@@ -16,7 +16,7 @@ import java.util.List;
  * @author makejava
  * @since 2020-02-27 22:13:02
  */
-@Api("购物车接口")
+@Api(tags = "购物车接口")
 @RestController
 @RequestMapping("cart")
 public class CartController {
@@ -26,30 +26,27 @@ public class CartController {
     @Resource
     private CartService cartService;
 
-    @ApiOperation("加入购物车")
+    @ApiOperation(value = "加入购物车")
     @PostMapping("insertCart")
     public int insert(@RequestBody Cart cart){
         return cartService.insert(cart);
     }
 
-    @ApiOperation("删除购物车")
+    @ApiOperation(value = "删除购物车")
     @GetMapping("deleteCartId")
     public boolean deleteCartId(@RequestParam("cartId") Integer cartId){
         return cartService.deleteById(cartId);
     }
 
-    @ApiOperation("清空购物车")
+    @ApiOperation(value = "清空购物车")
     @GetMapping("deleteAllCartByUserId")
     public int deleteAllCartByUserId(@RequestParam("userId") Integer userId){
         return cartService.deleteAllCart(userId);
     }
 
-    @ApiOperation("查询当前用户的购物车")
+    @ApiOperation(value = "查询当前用户的购物车")
     @GetMapping("getCartByUserId")
     public List<CartProductVo> getCartByUserId(@RequestParam("userId") Integer userId){
         return cartService.getAllCartByUserId(userId);
     }
-
-
-
 }

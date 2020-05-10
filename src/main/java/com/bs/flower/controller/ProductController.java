@@ -25,7 +25,7 @@ import java.util.*;
  * @author makejava
  * @since 2020-02-28 09:33:50
  */
-@Api("商品接口")
+@Api(tags = "商品接口")
 @RestController
 @RequestMapping("product")
 public class ProductController {
@@ -41,13 +41,13 @@ public class ProductController {
      * @param id 主键
      * @return 单条数据
      */
-    @ApiOperation("商品详情")
+    @ApiOperation(value = "商品详情")
     @GetMapping("selectOne")
     public Product selectOne(@RequestParam("id") Integer id) {
         return this.productService.queryById(id);
     }
 
-    @ApiOperation("新增商品")
+    @ApiOperation(value = "新增商品")
     @PostMapping("insertProduct")
     public int insertProduct(@RequestBody Product product) {
         return this.productService.insert(product);

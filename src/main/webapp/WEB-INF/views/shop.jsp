@@ -13,6 +13,7 @@
           rel="stylesheet">
     <link href="${ctx}/res/css/index/vendor.css" rel="stylesheet">
     <link href="${ctx}/res/css/index/style.css" rel="stylesheet">
+    <link href="${ctx}/res/toastr/toastr.min.css" rel="stylesheet">
     <script>
         var ctx = '${ctx}';
         var user = '${USERSESSION}';
@@ -309,8 +310,8 @@
                                                         data-placement="left"
                                                         title="查看" productId="${product.productId}"><i
                                                         class="lnr lnr-magnifier"></i></span></a>
-                                                <a  data-placement="left" title="加入购物车"
-                                                    productId="${product.productId}"><i
+                                                <a data-placement="left" title="加入购物车"
+                                                   productId="${product.productId}"><i
                                                         class="lnr lnr-cart"></i></a>
                                             </div>
                                         </figure>
@@ -599,7 +600,9 @@
 <!-- Scroll to Top End -->
 </body>
 <script type="text/javascript" src="${ctx}/res/js/jquery-3.1.1.min.js"></script>
-<script src="${ctx}/res/js/shop/shop.js"></script>
-<script src="${ctx}/res/js/index/vendor.js"></script>
-<script src="${ctx}/res/js/index/active.js"></script>
+<script src="${ctx}/res/js/shop/shop.js" type="text/javascript"></script>
+<script src="${ctx}/res/js/index/vendor.js" type="text/javascript"></script>
+<script src="${ctx}/res/js/index/active.js" type="text/javascript"></script>
+<script src="${ctx}/res/toastr/toastr.min.js" type="application/javascript"></script>
+
 </html>

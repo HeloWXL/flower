@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 
-@Api("网页跳转")
+@Api(tags = "网页跳转")
 @Controller
 @RequestMapping("/")
 public class HomeController {
@@ -40,8 +40,8 @@ public class HomeController {
      * @Description: 跳转到首页
      * @Date: 2020/2/28 12:16 AM
      */
-    @ApiOperation("跳转首页")
-    @GetMapping("/index")
+    @ApiOperation(value = "跳转首页")
+    @GetMapping("/")
     public String toIndex(Model model) {
         //爱情类
         model.addAttribute("loveProduct", productService.getAllProductByClassFy(1));
@@ -54,7 +54,7 @@ public class HomeController {
      * @Description: 跳转到商铺
      * @Date: 2020/2/28 12:16 AM
      */
-    @ApiOperation("跳转商铺")
+    @ApiOperation(value = "跳转商铺")
     @GetMapping("/shop")
     public String toShop(Model model) {
         model.addAttribute("productList", productService.getAllProduct());
@@ -66,7 +66,7 @@ public class HomeController {
      * @Author:
      * @Date: 2020/2/28 12:17 AM
      */
-    @ApiOperation("跳转订单")
+    @ApiOperation(value = "跳转订单")
     @GetMapping("/order/{userId}")
     public String toOrder(Model model, @PathVariable("userId") int userId) {
         model.addAttribute("cartList",cartService.getAllCartByUserId(userId));
@@ -87,7 +87,7 @@ public class HomeController {
      * @Description: 跳转到商品详情
      * @Date: 2020/2/28 12:17 AM
      */
-    @ApiOperation("跳转商品详情")
+    @ApiOperation(value = "跳转商品详情")
     @GetMapping("/detail/{id}")
     public String toDetail(@PathVariable("id") Integer id, Model model) {
         model.addAttribute("product", this.productService.queryById(id));
@@ -98,7 +98,7 @@ public class HomeController {
      * @Description: 跳转登录
      * @Date: 2020/2/28 12:17 AM
      */
-    @ApiOperation("跳转登录页面")
+    @ApiOperation(value = "跳转登录页面")
     @GetMapping("/login")
     public String toLogin() {
         return "/user/login";
@@ -108,7 +108,7 @@ public class HomeController {
      * @Description: 跳转注册
      * @Date: 2020/2/28 12:17 AM
      */
-    @ApiOperation("跳转登录页面")
+    @ApiOperation(value = "跳转登录页面")
     @GetMapping("/register")
     public String toRegister() {
         return "/user/register";
@@ -118,7 +118,7 @@ public class HomeController {
      * @Description: 个人中心
      * @Date: 2020/2/28 12:17 AM
      */
-    @ApiOperation("跳转个人中心")
+    @ApiOperation(value = "跳转个人中心")
     @GetMapping("/info")
     public String toInfo() {
         return "/user/info";
@@ -129,7 +129,7 @@ public class HomeController {
      * @Description: 订单详情
      * @Date: 2020/2/28 12:17 AM
      */
-    @ApiOperation("跳转订单详情")
+    @ApiOperation(value = "跳转订单详情")
     @GetMapping("/orderDetail/{orderId}")
     public String toOrderDetail(Model model,@PathVariable("orderId") Integer orderId) {
         model.addAttribute("order",orderService.getOrderById(orderId));

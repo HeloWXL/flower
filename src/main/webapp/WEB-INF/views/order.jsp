@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="${ctx}/res/img/logo.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="${ctx}/res/css/order/core-style.css">
+    <link href="${ctx}/res/toastr/toastr.min.css" rel="stylesheet">
     <script>
         var ctx = '${ctx}';
         var user = '${USERSESSION}';
@@ -132,6 +133,8 @@
 <script src="${ctx}/res/js/jquery-3.1.1.min.js" type="application/javascript"></script>
 <script src="${ctx}/res/js/order/plugins.js" type="application/javascript"></script>
 <script src="${ctx}/res/js/order/active.js" type="application/javascript"></script>
+<script src="${ctx}/res/toastr/toastr.min.js" type="application/javascript"></script>
+
 <script>
     $(function () {
         if(user==''||user==null) {

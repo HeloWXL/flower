@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="${ctx}/res/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="${ctx}/res/css/cart/style.css">
     <link rel="stylesheet" href="${ctx}/res/layui/css/layui.css">
+    <link href="${ctx}/res/toastr/toastr.min.css" rel="stylesheet">
     <script>
         var ctx = '${ctx}';
         var user = '${USERSESSION}';
@@ -75,15 +76,18 @@
 <script src="${ctx}/res/js/jquery-3.1.1.min.js"></script>
 <script src="${ctx}/res/layui/layui.js"></script>
 <script src="${ctx}/res/bootstrap/js/bootstrap.min.js"></script>
+<script src="${ctx}/res/toastr/toastr.min.js" type="application/javascript"></script>
+
 <script>
     $(function () {
+        // 初始化弹窗
+        toastr.options.positionClass = 'toast-top-right';
         if(user==''||user==null) {
             location.href = ctx+'/login';
             return;
         }
         //展示我的购物车
         showMyCart(userId);
-
         //动态获取删除按钮，并删除购物车
         $("tbody").on('click',"button[name='delete']",function(){
             //获取购物车ID
@@ -92,7 +96,6 @@
             deleteCartById(cartId,_this)
         });
     });
-
     function deleteCartById(id,_this) {
         $.ajax({
             url:ctx+'/cart/deleteCartId',
@@ -110,7 +113,6 @@
             }
         })
     }
-
     /**
      * 显示我的购物车
      * @param userId
@@ -168,6 +170,5 @@
             }
         })
     }
-
 </script>
 </html>

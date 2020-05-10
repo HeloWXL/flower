@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User:
-  Date: 2020/2/29
-  Time: 12:50 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
@@ -113,16 +106,52 @@
         </div>
     </div>
 
+    <%--<aside class="off-canvas-wrapper">--%>
+        <%--<div class="off-canvas-overlay"></div>--%>
+        <%--<div class="off-canvas-inner-content">--%>
+            <%--<div class="btn-close-off-canvas">--%>
+                <%--<i class="lnr lnr-cross"></i>--%>
+            <%--</div>--%>
+
+            <%--<div class="off-canvas-inner">--%>
+                <%--<!-- search box start -->--%>
+                <%--<div class="search-box-offcanvas">--%>
+                    <%--<form>--%>
+                        <%--<input type="text" placeholder="Search Here...">--%>
+                        <%--<button class="search-btn"><i class="lnr lnr-magnifier"></i></button>--%>
+                    <%--</form>--%>
+                <%--</div>--%>
+                <%--<!-- search box end -->--%>
+
+                <%--<!-- mobile menu start -->--%>
+                <%--<div class="mobile-navigation">--%>
+                    <%--<!-- mobile menu navigation start -->--%>
+                    <%--<nav>--%>
+                        <%--<ul class="mobile-menu">--%>
+                            <%--<li><a id="info" >个人信息</a></li>--%>
+                            <%--<li><a id="noShipped" >未发货</a></li>--%>
+                            <%--<li><a id="shipped"  >已发货</a></li>--%>
+                            <%--<li><a id="completeOrder">已完成订单</a></li>--%>
+                        <%--</ul>--%>
+                    <%--</nav>--%>
+                    <%--<!-- mobile menu navigation end -->--%>
+                <%--</div>--%>
+                <%--<!-- mobile menu end -->--%>
+            <%--</div>--%>
+        <%--</div>--%>
+    <%--</aside>--%>
+
+
     <div class="shop-main-wrapper section-space">
         <div class="container">
-
                 <div class="row clearfix">
+
                     <div class="col-md-2 column">
                         <div class="list-group">
                             <a id="info" class="list-group-item active" style="color: #ffffff">个人信息</a>
                             <a id="noShipped" class="list-group-item">未发货</a>
                             <a id="shipped" class="list-group-item">已发货</a>
-                            <a id="completeOrder" class="list-group-item">已完成订单</a>
+                            <a  class="list-group-item">已完成订单</a>
                         </div>
                     </div>
                     <div class="col-md-10 column" id="tab" style="display: none">

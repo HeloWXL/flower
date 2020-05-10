@@ -11,8 +11,10 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/flower?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: 123456
-    type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: com.mysql.jdbc.Driver
+#    username: root
+#    password: Holly@112336
+#    url: jdbc:mysql://121.37.142.204:3306/flower?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Dao.xml
@@ -22,3 +24,5 @@ mybatis-plus:
     cache-enabled: true
     lazyLoadingEnabled: true
     multipleResultSetsEnabled: true
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

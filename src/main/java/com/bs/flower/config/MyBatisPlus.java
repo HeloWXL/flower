@@ -26,17 +26,4 @@ public class MyBatisPlus {
     public PaginationInterceptor paginationInterceptor() {
       return new PaginationInterceptor();
     }
-
-    /**
-     * 打印 sql
-     */
-    @Bean
-    public PerformanceInterceptor performanceInterceptor() {
-      PerformanceInterceptor performanceInterceptor = new PerformanceInterceptor();
-      //格式化sql语句
-      Properties properties = new Properties();
-      properties.setProperty("format", "true");
-      performanceInterceptor.setProperties(properties);
-      return performanceInterceptor;
-    }
 }

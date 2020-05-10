@@ -14,6 +14,7 @@
           rel="stylesheet">
     <link href="${ctx}/res/css/index/vendor.css" rel="stylesheet">
     <link href="${ctx}/res/css/index/style.css" rel="stylesheet">
+    <link href="${ctx}/res/toastr/toastr.min.css" rel="stylesheet">
     <script>
         var ctx = '${ctx}';
         var user = '${USERSESSION}';
@@ -230,6 +231,8 @@
 </main>
 </body>
 <script src="${ctx}/res/js/jquery-3.1.1.min.js"></script>
+<script src="${ctx}/res/toastr/toastr.min.js" type="application/javascript"></script>
+
 <script>
     $(function () {
         if (userId == 0) {

@@ -17,7 +17,7 @@ import java.util.List;
  * @author makejava
  * @since 2020-02-27 22:13:13
  */
-@Api("订单接口")
+@Api(tags = "订单接口")
 @RestController
 @RequestMapping("order")
 public class OrderController {
@@ -28,12 +28,12 @@ public class OrderController {
     private OrderService orderService;
 
     @ApiOperation("查询订单详情")
-    @GetMapping("getOrderById")
+    @GetMapping(value = "getOrderById")
     public Order getOrderById(@RequestParam("orderId") int orderId){
         return this.orderService.queryById(orderId);
     }
 
-    @ApiOperation("添加订单")
+    @ApiOperation(value = "添加订单")
     @PostMapping("insertOrder")
     public int insert(@RequestBody Order order){
         return this.orderService.insert(order);
@@ -45,7 +45,7 @@ public class OrderController {
         return this.orderService.getOrderByStatus(userId,status);
     }
 
-    @ApiOperation("收货")
+    @ApiOperation(value = "收货")
     @PostMapping("receipt")
     public int receipt(@RequestParam("orderId") int orderId,@RequestParam("receiveTime") Date receiveTime) {
         return this.orderService.receipt(orderId,receiveTime);
